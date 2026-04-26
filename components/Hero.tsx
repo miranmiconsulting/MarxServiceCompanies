@@ -37,23 +37,26 @@ export default function Hero() {
         </div>
 
         <aside
-          aria-label="Gutter Helmet Certified Installer"
-          className="rounded-card border border-white/20 bg-white/10 p-5 text-center backdrop-blur-sm"
+          aria-label="Only Certified Gutter Helmet Installer in the San Antonio Area"
+          className="overflow-hidden rounded-card border border-white/25 bg-white/15 text-center shadow-soft ring-1 ring-accent/30 backdrop-blur-sm"
         >
-          <Image
-            src="/certified.svg"
-            alt="Gutter Helmet Certified Installer badge"
-            width={150}
-            height={150}
-            className="mx-auto h-[150px] w-[150px]"
-          />
-          <strong className="mt-2 block text-base text-white">
-            Gutter Helmet® Certified Installer
-          </strong>
-          <p className="mt-1 text-sm text-white/85">
-            Authorized to install the original patented gutter protection system —
-            backed by a transferable performance warranty.
-          </p>
+          {/* Slim accent bar reinforces the certification angle */}
+          <div className="h-1 bg-accent" aria-hidden="true" />
+          <div className="p-5">
+            <Image
+              src="/certified.svg"
+              alt="Gutter Helmet Certified Installer badge"
+              width={170}
+              height={170}
+              className="mx-auto h-[150px] w-[150px] sm:h-[170px] sm:w-[170px]"
+            />
+            <strong className="mt-3 block text-base font-extrabold leading-tight text-white sm:text-lg">
+              Only Certified Gutter Helmet® Installer in the San Antonio Area
+            </strong>
+            <p className="mt-2 text-sm text-white/85">
+              Authorized to install the original patented gutter protection system.
+            </p>
+          </div>
         </aside>
       </div>
     </section>

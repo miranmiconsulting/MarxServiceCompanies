@@ -30,6 +30,9 @@ export default function CtaBand({
           Request Online
         </Link>
       </div>
+      <p className="mt-5 text-xs uppercase tracking-wider text-white/70">
+        Installed by the area&apos;s only certified Gutter Helmet® professional
+      </p>
     </div>
   );
 

@@ -37,6 +37,25 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      {/* Reinforces the Gutter Helmet card above with the differentiator. */}
+      <section className="bg-neutral-50 py-12">
+        <div className="container-page">
+          <div className="mx-auto max-w-3xl rounded-card border border-accent/30 bg-white p-7 text-center shadow-soft">
+            <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-accent-dark">
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              Gutter Helmet® Certification
+            </span>
+            <h2 className="mt-4">Certified Installation Matters</h2>
+            <p className="mt-3 text-neutral-700">
+              When it comes to Gutter Helmet® systems, proper installation makes
+              all the difference. Marx Service Companies is the only certified
+              installer in the area, ensuring the system is installed to
+              manufacturer standards and backed by warranty.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         title="Not Sure What You Need? Just Ask."
         body="We'll come look, tell you straight, and quote in writing — at no charge."

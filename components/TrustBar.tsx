@@ -1,6 +1,7 @@
 import { business } from "@/lib/business";
 
 const items = [
+  "Only Certified Gutter Helmet® Installer in the Area",
   `Established ${business.foundedYear}`,
   `Owner ${business.owner} on every job`,
   "Free estimates · Call or text",
