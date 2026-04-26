@@ -59,3 +59,70 @@
 @layer utilities {
   .text-balance { text-wrap: balance; }
 }
+
+/* =========================================================
+   Hero rain / gutter scene
+   - Pure CSS animations, GPU-friendly (transform + opacity).
+   - Raindrops are absolutely positioned <span> elements.
+   - SVG shimmer + water-pulse classes drive the gutter visual.
+   - prefers-reduced-motion disables motion entirely.
+   ========================================================= */
+.raindrop {
+  position: absolute;
+  top: -16px;
+  width: 1.5px;
+  height: 14px;
+  border-radius: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(180, 220, 255, 0) 0%,
+    rgba(180, 220, 255, 0.85) 100%
+  );
+  animation-name: rain-fall;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  will-change: transform;
+}
+
+/* Lighter rain density on small screens to save battery + visual noise */
+@media (max-width: 640px) {
+  .raindrop:nth-child(2n) { display: none; }
+  .raindrop { width: 1px; height: 12px; }
+}
+
+@keyframes rain-fall {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 100vh, 0); }
+}
+
+/* Gutter water shimmer — the bright band slides left → right inside the gutter */
+.gutter-shine-wrap {
+  animation: gutter-shine 3.6s ease-in-out infinite;
+  transform-origin: left center;
+}
+@keyframes gutter-shine {
+  0%, 100% { transform: translateX(0);    opacity: 0; }
+  10%      { opacity: 0.85; }
+  90%      { opacity: 0.85; }
+  100%     { transform: translateX(1600px); opacity: 0; }
+}
+
+/* Water "drip" pulses out of the downspout */
+.water-pulse-wrap {
+  animation: water-pulse 1.4s linear infinite;
+  transform-origin: top;
+}
+@keyframes water-pulse {
+  0%   { transform: translate3d(0, -60px, 0); opacity: 0; }
+  20%  { opacity: 0.95; }
+  80%  { opacity: 0.7; }
+  100% { transform: translate3d(0, 30px, 0);  opacity: 0; }
+}
+
+/* Reduced-motion: disable everything, keep the static scene readable */
+@media (prefers-reduced-motion: reduce) {
+  .raindrop { display: none; }
+  .gutter-shine-wrap,
+  .water-pulse-wrap { animation: none !important; }
+  .water-pulse-wrap { display: none; }
+}

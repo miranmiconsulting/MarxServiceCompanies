@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/lib/business";
+import RainScene from "./RainScene";
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-br from-navy to-navy-dark py-14 text-white md:py-20">
-      <div className="container-page grid gap-10 md:grid-cols-[1.4fr,1fr] md:items-center">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-navy to-navy-dark py-14 text-white md:py-20">
+      <RainScene />
+      <div className="container-page relative z-10 grid gap-10 md:grid-cols-[1.4fr,1fr] md:items-center">
         <div>
           <h1 className="text-balance text-white">
             San Antonio Gutter Pros — Installation, Guards, Repair & Cleaning
@@ -36,7 +38,7 @@ export default function Hero() {
 
         <aside
           aria-label="Gutter Helmet Certified Installer"
-          className="rounded-card border border-white/20 bg-white/5 p-5 text-center"
+          className="rounded-card border border-white/20 bg-white/10 p-5 text-center backdrop-blur-sm"
         >
           <Image
             src="/certified.svg"
