@@ -48,12 +48,12 @@ export default function Navbar() {
                 The logo image already says "Marx Service Companies", so we don't repeat it
                 in text — we add the public-facing brand name "Alamo Area Gutters" alongside. */}
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Marx Service Companies — Servicing Your Projects"
-              width={360}
-              height={130}
+              width={600}
+              height={349}
               priority
-              className="block h-11 w-auto sm:h-12 md:h-14"
+              className="block h-12 w-auto sm:h-14 md:h-16"
             />
             <span className="hidden border-l border-neutral-200 pl-3 text-base font-extrabold leading-tight text-navy sm:block md:text-lg">
               {business.brandName}

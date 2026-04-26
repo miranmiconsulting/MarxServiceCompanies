@@ -61,7 +61,7 @@ const localBusinessJsonLd = {
   "@type": "RoofingContractor",
   name: `${business.brandName} ${business.brandSubtitle}`,
   alternateName: [business.legalName, "Alamo Area Gutter Helmet"],
-  image: `${business.siteUrl}/logo.svg`,
+  image: `${business.siteUrl}/logo.png`,
   url: business.siteUrl,
   telephone: business.phoneE164,
   priceRange: "$$",
