@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="Marx Service Companies — Servicing Your Projects">
+  <!-- Roof / house silhouette inspired by the business card -->
+  <g>
+    <!-- back roof slope -->
+    <path d="M58 56 L92 22 L108 38 L108 56 Z" fill="#1B2D5C"/>
+    <!-- front roof -->
+    <path d="M8 60 L52 16 L96 60 L86 60 L52 28 L18 60 Z" fill="#2B95D6"/>
+    <!-- gutter line under front roof -->
+    <rect x="6" y="60" width="92" height="8" rx="1.5" fill="#1B2D5C"/>
+    <!-- downspout hint -->
+    <rect x="6" y="60" width="8" height="22" fill="#1B2D5C"/>
+    <!-- sparkles -->
+    <path d="M34 44 l3 -7 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 z" fill="#FFFFFF"/>
+    <path d="M22 76 l2 -4 2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 z" fill="#1B2D5C"/>
+    <path d="M48 78 l1.5 -3 1.5 3 3 1.5 -3 1.5 -1.5 3 -1.5 -3 -3 -1.5 z" fill="#1B2D5C"/>
+  </g>
+  <!-- Wordmark -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">
+    <text x="118" y="42" font-size="22" font-weight="800" fill="#1B2D5C" letter-spacing="-0.5">MARX SERVICE</text>
+    <text x="118" y="66" font-size="22" font-weight="800" fill="#2B95D6" letter-spacing="-0.5">COMPANIES</text>
+    <text x="118" y="82" font-size="8" font-weight="700" fill="#1B2D5C" letter-spacing="2.2">SERVICING YOUR PROJECTS</text>
+    <!-- decorative accent lines like on the card -->
+    <line x1="262" y1="58" x2="312" y2="58" stroke="#2B95D6" stroke-width="1.5"/>
+    <line x1="262" y1="62" x2="312" y2="62" stroke="#2B95D6" stroke-width="1.5"/>
+  </g>
+</svg>
