@@ -4,6 +4,7 @@ import CtaBand from "@/components/CtaBand";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import InstagramScript from "@/components/InstagramScript";
 import { business } from "@/lib/business";
+import { recentWork } from "@/lib/recentWork";
 
 export const metadata: Metadata = {
   title: "Recent Work — San Antonio Gutter Installs & Cleanings",
@@ -11,12 +12,6 @@ export const metadata: Metadata = {
     "Recent gutter installation, cleaning, and maintenance projects from Marx Service Companies in San Antonio TX. Watch real reels from the field.",
   alternates: { canonical: "/gallery" },
 };
-
-const REELS = [
-  "https://www.instagram.com/reel/CkIp1YCA2yW/",
-  "https://www.instagram.com/reel/C-BGK6RSV1x/",
-  "https://www.instagram.com/reel/DBrkuH6S68S/",
-];
 
 export default function GalleryPage() {
   return (
@@ -34,17 +29,19 @@ export default function GalleryPage() {
             project updates, gutter tips, and seasonal maintenance reminders.
           </p>
 
-          {/* Flex-wrap gives a clean 2-up grid that auto-centers the orphan
-              third reel on its own row. Each item caps at the Instagram
-              embed max-width (540px). */}
+          {/* Flex-wrap: 1 col mobile, 2 cols sm+, the orphan third reel
+              auto-centers on its own row thanks to justify-center. */}
           <div className="mx-auto flex max-w-[1100px] flex-wrap justify-center gap-6">
-            {REELS.map((url) => (
-              <div
-                key={url}
-                className="w-full max-w-[540px] sm:w-[calc(50%-12px)]"
+            {recentWork.map((item) => (
+              <figure
+                key={item.url}
+                className="m-0 w-full max-w-[540px] sm:w-[calc(50%-12px)]"
               >
-                <InstagramEmbed url={url} />
-              </div>
+                <InstagramEmbed url={item.url} />
+                <figcaption className="mt-2 text-center text-sm font-semibold text-neutral-700">
+                  {item.caption}
+                </figcaption>
+              </figure>
             ))}
           </div>
 

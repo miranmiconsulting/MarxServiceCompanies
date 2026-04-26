@@ -55,67 +55,68 @@ export default function RainScene() {
         ))}
       </div>
 
-      {/* Roofline + gutter + downspout */}
+      {/* Roofline + gutter + downspout — kept very subtle so the hero copy
+          stays the focal point. Whole group sits in the bottom ~30% of the
+          hero with reduced opacity. */}
       <svg
         viewBox="0 0 1200 320"
         preserveAspectRatio="xMidYMax slice"
-        className="absolute inset-x-0 bottom-0 h-[42%] w-full md:h-[52%]"
+        className="absolute inset-x-0 bottom-0 h-[30%] w-full opacity-60 md:h-[38%]"
       >
         <defs>
           <linearGradient id="gutterShine" x1="0" x2="1" y1="0" y2="0">
             <stop offset="0%"   stopColor="rgba(255,255,255,0)" />
-            <stop offset="40%"  stopColor="rgba(255,255,255,0.35)" />
-            <stop offset="50%"  stopColor="rgba(255,255,255,0.85)" />
-            <stop offset="60%"  stopColor="rgba(255,255,255,0.35)" />
+            <stop offset="40%"  stopColor="rgba(255,255,255,0.25)" />
+            <stop offset="50%"  stopColor="rgba(255,255,255,0.55)" />
+            <stop offset="60%"  stopColor="rgba(255,255,255,0.25)" />
             <stop offset="100%" stopColor="rgba(255,255,255,0)" />
           </linearGradient>
           <linearGradient id="streamGrad" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%"   stopColor="rgba(43,149,214,0)" />
-            <stop offset="50%"  stopColor="rgba(150,210,255,0.85)" />
+            <stop offset="50%"  stopColor="rgba(150,210,255,0.55)" />
             <stop offset="100%" stopColor="rgba(43,149,214,0)" />
           </linearGradient>
         </defs>
 
-        {/* Roof silhouette (dark fill against the navy gradient hero) */}
+        {/* Roof silhouette — darker, grounded into the hero's navy gradient */}
         <path
           d="M0,180 L500,80 L1200,180 L1200,320 L0,320 Z"
-          fill="#0E1A3F"
+          fill="#0A1632"
         />
-        {/* Roof top edge highlight */}
+        {/* Roof top edge highlight — much subtler than before */}
         <path
           d="M0,180 L500,80 L1200,180"
-          stroke="#2B95D6"
-          strokeWidth="2"
+          stroke="#3D7DB3"
+          strokeWidth="1.2"
           fill="none"
-          opacity="0.55"
+          opacity="0.35"
         />
 
-        {/* Gutter body */}
-        <rect x="0" y="180" width="1200" height="14" fill="#2B95D6" />
-        {/* Gutter underside shadow */}
-        <rect x="0" y="194" width="1200" height="4" fill="#1F78B0" />
+        {/* Gutter body — half the previous height, muted darker blue */}
+        <rect x="0" y="180" width="1200" height="6" fill="#1F78B0" opacity="0.65" />
+        {/* Thin separator under the gutter */}
+        <rect x="0" y="186" width="1200" height="1" fill="#0E1A3F" opacity="0.7" />
 
-        {/* Gutter water shimmer (CSS animated) */}
+        {/* Gutter water shimmer — narrower and dimmer */}
         <g className="gutter-shine-wrap">
           <rect
             x="-400"
-            y="183"
-            width="600"
-            height="9"
+            y="180"
+            width="500"
+            height="6"
             fill="url(#gutterShine)"
           />
         </g>
 
-        {/* Downspout */}
-        <rect x="1150" y="194" width="14" height="126" fill="#2B95D6" />
-        <rect x="1150" y="194" width="2"  height="126" fill="#1F78B0" />
+        {/* Downspout — narrower, muted */}
+        <rect x="1156" y="187" width="10" height="133" fill="#1F78B0" opacity="0.6" />
 
-        {/* Water stream from the downspout (CSS animated pulses) */}
+        {/* Water stream from the downspout */}
         <g className="water-pulse-wrap">
           <rect
-            x="1153"
+            x="1158"
             y="240"
-            width="8"
+            width="6"
             height="80"
             rx="3"
             fill="url(#streamGrad)"
