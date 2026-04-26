@@ -48,10 +48,11 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1B2D5C",
+  themeColor: "#1FA9E0",
   width: "device-width",
   initialScale: 1,
 };

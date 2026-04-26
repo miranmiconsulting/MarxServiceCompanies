@@ -50,11 +50,11 @@ export default function Navbar() {
             <Image
               src="/logo.svg"
               alt="Marx Service Companies — Servicing Your Projects"
-              width={360}
-              height={130}
+              width={319}
+              height={186}
               priority
               unoptimized
-              className="block h-11 w-auto sm:h-12 md:h-14"
+              className="block h-12 w-auto sm:h-14 md:h-16"
             />
             <span className="hidden border-l border-neutral-200 pl-3 text-base font-extrabold leading-tight text-navy sm:block md:text-lg">
               {business.brandName}
