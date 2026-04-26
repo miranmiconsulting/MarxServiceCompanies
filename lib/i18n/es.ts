@@ -42,21 +42,21 @@ export const es: Dict = {
     contact: "Contacto",
     freeEstimate: "Estimado Gratis",
     aria: "Principal",
-    callPhone: `📞 Llamar al ${phone}`,
+    callPhone: `📞 Llame al ${phone}`,
   },
 
   hero: {
     eyebrow: "Único Instalador Certificado en el Área",
     h1: "Expertos en Canales en San Antonio: Instalación, Protección, Reparación y Limpieza",
-    sub: `Canales sin uniones de 5" y 6", protección Gutter Helmet®, y limpieza exterior bien hecha desde la primera vez. Empresa familiar local de confianza en San Antonio y áreas alrededor desde ${business.foundedYear}.`,
-    callBtn: `📞 Llamar al ${phone}`,
+    sub: `Canales sin uniones de 5" y 6", protección Gutter Helmet®, y limpieza exterior bien hecha desde la primera vez. Empresa familiar local de confianza en San Antonio y áreas cercanas desde ${business.foundedYear}.`,
+    callBtn: `📞 Llame al ${phone}`,
     textBtn: "💬 Envíenos un mensaje",
     estimateBtn: "Pida un Estimado Gratis",
     badges: [
       `★ Desde ${business.foundedYear}`,
       "★ Estimados Gratis",
       "★ Negocio Local",
-      "★ Llame o envíe mensaje",
+      "★ Llame o envíe un mensaje",
     ],
     certCardTitle: "Único Instalador Certificado de Gutter Helmet® en el Área de San Antonio",
     certCardSub: "Autorizados para instalar el sistema original patentado de protección de canales.",
@@ -69,8 +69,8 @@ export const es: Dict = {
       "Único Instalador Certificado de Gutter Helmet® en el Área",
       `Desde ${business.foundedYear}`,
       `El dueño ${business.owner} en cada trabajo`,
-      "Estimados gratis · Llame o envíe mensaje",
-      "Servicio en San Antonio y áreas alrededor",
+      "Estimados gratis · Llame o envíe un mensaje",
+      "Servicio en San Antonio y áreas cercanas",
     ],
   },
 
@@ -167,7 +167,7 @@ export const es: Dict = {
     title: "Por Qué los Vecinos de San Antonio Eligen a Marx",
     sub: "Llegamos, hacemos el trabajo bien, y respondemos por él. Eso es todo.",
     items: [
-      { title: `Desde ${business.foundedYear}`, body: "Más de una década sirviendo a familias en San Antonio. La mayoría de nuestro trabajo viene por referencia." },
+      { title: `Desde ${business.foundedYear}`, body: "Más de una década sirviendo a familias en San Antonio. La mayoría de nuestro trabajo viene por recomendaciones." },
       { title: "El Dueño en Cada Trabajo", body: `${business.owner} está en sitio, no solo en la calcomanía del camión. Usted habla con el dueño.` },
       { title: "Estimados Gratis y Sin Presión", body: "Medimos, recomendamos, y le damos un precio. Sin presión de venta. Sin sorpresas." },
       { title: "Instalador Autorizado de Gutter Helmet®", body: "Respaldados por el sistema original de protección de canales con garantía transferible de funcionamiento." },
@@ -179,7 +179,7 @@ export const es: Dict = {
   recentWork: {
     title: "Trabajo Reciente",
     sub: "Instalaciones y limpiezas reales en el área de San Antonio. Síganos en Instagram para nuevos videos cada semana.",
-    body: "Canales nuevos, reparaciones, limpieza, y mantenimiento por todo San Antonio y áreas alrededor. Siga a Marx Service Companies para ver actualizaciones de proyectos, consejos sobre canales, y recordatorios de mantenimiento por temporada.",
+    body: "Canales nuevos, reparaciones, limpieza, y mantenimiento por todo San Antonio y áreas cercanas. Siga a Marx Service Companies para ver actualizaciones de proyectos, consejos sobre canales, y recordatorios de mantenimiento por temporada.",
     captions: [
       "Canales nuevos en una casa antigua",
       "Instalación de canales sin uniones",
@@ -188,13 +188,13 @@ export const es: Dict = {
     seeAll: "Ver Todo el Trabajo Reciente →",
     follow: "Vea Más Trabajo en Instagram →",
     galleryCtaTitle: "¿Le Gusta Lo Que Ve? Hablemos Sobre Su Hogar.",
-    galleryCtaBody: "Estimados gratis y honestos en todo San Antonio y áreas alrededor.",
+    galleryCtaBody: "Estimados gratis y honestos en todo San Antonio y áreas cercanas.",
   },
 
   cta: {
     title: "Estimados Gratis con Respuesta el Mismo Día",
     body: "Cuéntenos sobre su proyecto. Pasamos a medir, le damos recomendaciones honestas, y un precio por escrito sin presión.",
-    callBtn: `📞 Llamar al ${phone}`,
+    callBtn: `📞 Llame al ${phone}`,
     textBtn: "💬 Envíenos un mensaje",
     requestBtn: "Pídalo en Línea",
     kicker: "Instalado por el único profesional certificado de Gutter Helmet® en el área",
@@ -202,12 +202,12 @@ export const es: Dict = {
 
   areas: {
     title: "Sirviendo con Orgullo a San Antonio y Áreas Alrededor",
-    sub: `Basados en ${business.addressLocality}, ${business.addressRegion}. Atendemos hogares por todo el Condado de Bexar y las comunidades alrededor.`,
+    sub: `Basados en ${business.addressLocality}, ${business.addressRegion}. Atendemos hogares por todo el Condado de Bexar y las comunidades cercanas.`,
   },
 
   servicesPage: {
     title: "Nuestros Servicios",
-    subtitle: "Canales, protección de canales, y limpieza exterior en todo San Antonio y áreas alrededor.",
+    subtitle: "Canales, protección de canales, y limpieza exterior en todo San Antonio y áreas cercanas.",
     certEyebrow: "Certificación de Gutter Helmet®",
     certTitle: "La Instalación Certificada Importa",
     certBody: "Cuando se trata de sistemas Gutter Helmet®, una instalación correcta hace toda la diferencia. Marx Service Companies es el único instalador certificado en el área, lo que garantiza que el sistema se instala según los estándares del fabricante y con respaldo de garantía.",
@@ -229,7 +229,7 @@ export const es: Dict = {
     meaningH2: '¿Qué Significa "A Su Servicio" Para Nosotros?',
     meaningP: "Significa que el dueño contesta el teléfono. Significa que llegamos cuando decimos que vamos a llegar. Significa que medimos dos veces, damos un precio una vez, y no le cambiamos el número a la mitad del trabajo. Significa limpiar antes de irnos para que no pueda saber dónde trabajamos, excepto que sus canales drenan otra vez.",
     whereH2: "Dónde Trabajamos",
-    whereP: `Estamos basados en ${business.addressLocality}, ${business.addressRegion} y atendemos hogares por todo el Condado de Bexar y las comunidades alrededor, incluyendo Stone Oak, Alamo Heights, Helotes, Boerne, Bulverde, Schertz, Cibolo, Selma, Universal City, Live Oak, Converse, y New Braunfels.`,
+    whereP: `Estamos basados en ${business.addressLocality}, ${business.addressRegion} y atendemos hogares por todo el Condado de Bexar y las comunidades cercanas, incluyendo Stone Oak, Alamo Heights, Helotes, Boerne, Bulverde, Schertz, Cibolo, Selma, Universal City, Live Oak, Converse, y New Braunfels.`,
     certH2: "Instalador Certificado de Gutter Helmet®",
     certP: "Marx Service Companies es el único instalador certificado de Gutter Helmet® en el área, lo que garantiza que el sistema se instala según los estándares del fabricante y con garantía transferible de funcionamiento. Si una malla o cubierta es mejor para su hogar, también se lo decimos.",
     certBadgeAlt: "Insignia de Instalador Certificado de Gutter Helmet",
@@ -244,13 +244,13 @@ export const es: Dict = {
     phoneLabel: "Teléfono y Mensaje",
     emailLabel: "Correo",
     areaLabel: "Área de Servicio",
-    areaText: `${business.addressLocality}, ${business.addressRegion} y áreas alrededor. Condado de Bexar y más allá.`,
+    areaText: `${business.addressLocality}, ${business.addressRegion} y áreas cercanas. Condado de Bexar y más allá.`,
     hoursLabel: "Horario",
     hoursWeek: "Lun a Sáb · 8:00 AM a 6:00 PM",
     hoursSun: "Dom · Por cita",
     ownerLabel: "Dueño",
     ownerText: `${business.owner} · Empresa familiar desde ${business.foundedYear}`,
-    callNow: "📞 Llamar Ahora",
+    callNow: "📞 Llame Ahora",
     textUs: "💬 Envíenos un Mensaje",
     estimateH2: "Pida un Estimado Gratis",
     estimateSub: "Cuéntenos sobre su proyecto. Le contestamos en un día laboral.",
@@ -305,7 +305,7 @@ export const es: Dict = {
     title: "Página No Encontrada",
     body: `Esa página no existe, pero seguimos aquí. Llame o envíe un mensaje al ${phone} para un estimado gratis.`,
     back: "Volver al Inicio",
-    callBtn: `📞 Llamar al ${phone}`,
+    callBtn: `📞 Llame al ${phone}`,
   },
 
   pageMeta: {
@@ -323,7 +323,7 @@ export const es: Dict = {
     },
     contact: {
       title: "Contacto y Estimado Gratis | Expertos en Canales en San Antonio",
-      description: `Pida un estimado gratis para canales en San Antonio TX. Llame o envíe mensaje a ${business.owner} al ${phone}. Alamo Area Gutters by Marx Service Companies, empresa familiar desde ${business.foundedYear}.`,
+      description: `Pida un estimado gratis para canales en San Antonio TX. Llame o envíe un mensaje a ${business.owner} al ${phone}. Alamo Area Gutters by Marx Service Companies, empresa familiar desde ${business.foundedYear}.`,
     },
     gallery: {
       title: "Trabajo Reciente | Instalaciones y Limpiezas de Canales en San Antonio",

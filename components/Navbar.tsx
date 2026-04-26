@@ -24,24 +24,20 @@ export default function Navbar({ lang = "en" }: Props) {
 
   return (
     <>
-      {/* Utility bar — on mobile show a value-prop message instead of the
-          phone (sticky CTA already covers calling). On sm+ show the tagline
-          left and the phone right with a locale switcher. */}
+      {/* Utility bar — value-prop on mobile, tagline + phone on sm+.
+          Locale switcher now lives in the sticky header (anchored), not here. */}
       <div className="bg-neutral-900 text-sm text-white">
         <div className="container-page flex items-center justify-between gap-3 py-2">
           <span className="font-semibold sm:hidden">{t.utility.mobileMessage}</span>
           <span className="hidden opacity-80 sm:inline">
             {t.utility.tagline} · {t.utility.established}
           </span>
-          <div className="flex items-center gap-3">
-            <a
-              href={`tel:${business.phoneE164}`}
-              className="hidden whitespace-nowrap font-semibold text-white hover:no-underline sm:inline"
-            >
-              📞 {business.phone}
-            </a>
-            <LocaleSwitcher lang={lang} ariaLabel={t.langSwitcher.aria} />
-          </div>
+          <a
+            href={`tel:${business.phoneE164}`}
+            className="hidden whitespace-nowrap font-semibold text-white hover:no-underline sm:inline"
+          >
+            📞 {business.phone}
+          </a>
         </div>
       </div>
 
@@ -70,7 +66,7 @@ export default function Navbar({ lang = "en" }: Props) {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-5 md:flex">
             {links.map((l) => (
               <Link
                 key={l.href}
@@ -80,6 +76,7 @@ export default function Navbar({ lang = "en" }: Props) {
                 {l.label}
               </Link>
             ))}
+            <LocaleSwitcher lang={lang} ariaLabel={t.langSwitcher.aria} />
             <Link
               href={`${prefix}/contact#estimate`}
               className="rounded-lg bg-accent px-4 py-2 font-bold text-white transition hover:bg-accent-dark hover:no-underline"
@@ -88,14 +85,17 @@ export default function Navbar({ lang = "en" }: Props) {
             </Link>
           </div>
 
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            onClick={() => setOpen((v) => !v)}
-            className="-mr-2 grid h-12 w-12 place-items-center rounded-md text-navy transition hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand md:hidden"
-          >
+          {/* Mobile: locale switcher anchored next to the hamburger */}
+          <div className="flex items-center gap-2 md:hidden">
+            <LocaleSwitcher lang={lang} ariaLabel={t.langSwitcher.aria} />
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              onClick={() => setOpen((v) => !v)}
+              className="-mr-2 grid h-12 w-12 place-items-center rounded-md text-navy transition hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            >
             {open ? (
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
                 <line x1="6" y1="6" x2="18" y2="18" />
@@ -108,7 +108,8 @@ export default function Navbar({ lang = "en" }: Props) {
                 <line x1="4" y1="17" x2="20" y2="17" />
               </svg>
             )}
-          </button>
+            </button>
+          </div>
         </nav>
 
         {open && (
