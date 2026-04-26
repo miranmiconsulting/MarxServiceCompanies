@@ -37,28 +37,26 @@ export default function Navbar() {
       <header className="sticky top-0 z-50 border-b border-neutral-100 bg-white">
         <nav
           aria-label="Main"
-          className="container-page flex items-center justify-between py-3"
+          className="container-page flex items-center justify-between gap-4 py-3 md:py-4"
         >
           <Link
             href="/"
-            className="flex items-center gap-3 hover:no-underline"
+            className="flex shrink-0 items-center gap-3 py-1 hover:no-underline"
             aria-label={`${business.brandName} ${business.brandSubtitle} — Home`}
           >
+            {/* Logo container — fixed aspect ratio, scales with height across breakpoints.
+                The logo image already says "Marx Service Companies", so we don't repeat it
+                in text — we add the public-facing brand name "Alamo Area Gutters" alongside. */}
             <Image
               src="/logo.svg"
-              alt="Marx Service Companies"
-              width={160}
-              height={48}
+              alt="Marx Service Companies — Servicing Your Projects"
+              width={360}
+              height={130}
               priority
-              className="h-11 w-auto"
+              className="block h-11 w-auto sm:h-12 md:h-14"
             />
-            <span className="hidden sm:block leading-tight">
-              <span className="block font-extrabold text-navy">
-                {business.brandName}
-              </span>
-              <span className="block text-[0.72rem] font-semibold text-neutral-500">
-                {business.brandSubtitle}
-              </span>
+            <span className="hidden border-l border-neutral-200 pl-3 text-base font-extrabold leading-tight text-navy sm:block md:text-lg">
+              {business.brandName}
             </span>
           </Link>
 

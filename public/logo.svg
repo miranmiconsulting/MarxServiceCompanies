@@ -1,26 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="Marx Service Companies — Servicing Your Projects">
-  <!-- Roof / house silhouette inspired by the business card -->
-  <g>
-    <!-- back roof slope -->
-    <path d="M58 56 L92 22 L108 38 L108 56 Z" fill="#1B2D5C"/>
-    <!-- front roof -->
-    <path d="M8 60 L52 16 L96 60 L86 60 L52 28 L18 60 Z" fill="#2B95D6"/>
-    <!-- gutter line under front roof -->
-    <rect x="6" y="60" width="92" height="8" rx="1.5" fill="#1B2D5C"/>
-    <!-- downspout hint -->
-    <rect x="6" y="60" width="8" height="22" fill="#1B2D5C"/>
-    <!-- sparkles -->
-    <path d="M34 44 l3 -7 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 z" fill="#FFFFFF"/>
-    <path d="M22 76 l2 -4 2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 z" fill="#1B2D5C"/>
-    <path d="M48 78 l1.5 -3 1.5 3 3 1.5 -3 1.5 -1.5 3 -1.5 -3 -3 -1.5 z" fill="#1B2D5C"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 130" role="img" aria-label="Marx Service Companies — Servicing Your Projects">
+  <!-- ============== ARTWORK ============== -->
+  <!-- Back gable peak (darker, behind the main roof on the right) -->
+  <path d="M75,75 L96,30 L125,62 L125,75 Z" fill="#1B2D5C"/>
+
+  <!-- Front main roof — bright blue, prominent peak -->
+  <path d="M5,82 L62,12 L120,82 L106,82 L62,26 L19,82 Z" fill="#2B95D6"/>
+
+  <!-- Front roof inner highlight (subtle lighter inset on the right slope) -->
+  <path d="M62,26 L96,68 L62,68 Z" fill="#52A8DC"/>
+
+  <!-- Gutter -->
+  <rect x="5" y="82" width="115" height="9" fill="#1B2D5C"/>
+  <!-- Left downspout -->
+  <rect x="5" y="82" width="8" height="38" fill="#1B2D5C"/>
+
+  <!-- Big white four-point sparkle inside the roof -->
+  <path d="M50,37 L53,43 L59,46 L53,49 L50,55 L47,49 L41,46 L47,43 Z" fill="#FFFFFF"/>
+
+  <!-- Two small dark sparkles near the gutter line -->
+  <path d="M30,100 L32,103 L35,105 L32,107 L30,110 L28,107 L25,105 L28,103 Z" fill="#1B2D5C"/>
+  <path d="M55,111 L56,114 L59,115 L56,116 L55,119 L54,116 L51,115 L54,114 Z" fill="#1B2D5C"/>
+
+  <!-- ============== WORDMARK ============== -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" text-rendering="geometricPrecision">
+    <text x="140" y="55" font-size="30" font-weight="900" fill="#1B2D5C" letter-spacing="-0.5">MARX SERVICE</text>
+    <text x="140" y="88" font-size="30" font-weight="900" fill="#2B95D6" letter-spacing="-0.5">COMPANIES</text>
+
+    <!-- Two horizontal accent lines to the right of "MARX SERVICE" -->
+    <line x1="305" y1="44" x2="355" y2="44" stroke="#2B95D6" stroke-width="2.2"/>
+    <line x1="305" y1="50" x2="355" y2="50" stroke="#2B95D6" stroke-width="2.2"/>
+
+    <!-- Tagline -->
+    <text x="140" y="107" font-size="9.5" font-weight="700" fill="#1B2D5C" letter-spacing="2.8">SERVICING YOUR PROJECTS</text>
   </g>
-  <!-- Wordmark -->
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">
-    <text x="118" y="42" font-size="22" font-weight="800" fill="#1B2D5C" letter-spacing="-0.5">MARX SERVICE</text>
-    <text x="118" y="66" font-size="22" font-weight="800" fill="#2B95D6" letter-spacing="-0.5">COMPANIES</text>
-    <text x="118" y="82" font-size="8" font-weight="700" fill="#1B2D5C" letter-spacing="2.2">SERVICING YOUR PROJECTS</text>
-    <!-- decorative accent lines like on the card -->
-    <line x1="262" y1="58" x2="312" y2="58" stroke="#2B95D6" stroke-width="1.5"/>
-    <line x1="262" y1="62" x2="312" y2="62" stroke="#2B95D6" stroke-width="1.5"/>
+
+  <!-- ============== GUTTER HELMET (GH) MARK ============== -->
+  <g transform="translate(282, 31)">
+    <circle cx="10" cy="10" r="10" fill="#2EA043"/>
+    <text x="10" y="13.5" font-size="9.5" font-weight="900" fill="#FFFFFF" text-anchor="middle"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">GH</text>
   </g>
 </svg>
