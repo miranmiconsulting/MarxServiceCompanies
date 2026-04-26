@@ -1,37 +1,43 @@
 import Link from "next/link";
 import { business } from "@/lib/business";
+import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
 
 type Props = {
+  lang?: Lang;
   title?: string;
   body?: string;
   inSection?: boolean;
 };
 
 export default function CtaBand({
-  title = "Free Estimates with Same Day Response",
-  body = "Tell us about your project. We'll come measure, give honest recommendations, and a written quote with no pressure.",
+  lang = "en",
+  title,
+  body,
   inSection = true,
 }: Props) {
+  const t = getDict(lang).cta;
+  const prefix = pathPrefix(lang);
+
   const inner = (
     <div className="rounded-card bg-gradient-to-br from-navy to-navy-dark p-8 text-center text-white shadow-soft">
-      <h2 className="text-white">{title}</h2>
-      <p className="mt-2 text-white/90">{body}</p>
+      <h2 className="text-white">{title ?? t.title}</h2>
+      <p className="mt-2 text-white/90">{body ?? t.body}</p>
       <div className="mt-4 flex flex-wrap justify-center gap-3">
         <a href={`tel:${business.phoneE164}`} className="btn btn-primary">
-          📞 Call {business.phone}
+          {t.callBtn}
         </a>
         <a
           href={`sms:${business.phoneE164}`}
           className="btn bg-white text-navy hover:bg-neutral-100 hover:no-underline"
         >
-          💬 Text Us
+          {t.textBtn}
         </a>
-        <Link href="/contact#estimate" className="btn btn-outline-light">
-          Request Online
+        <Link href={`${prefix}/contact#estimate`} className="btn btn-outline-light">
+          {t.requestBtn}
         </Link>
       </div>
       <p className="mt-5 text-xs uppercase tracking-wider text-white/70">
-        Installed by the area&apos;s only certified Gutter Helmet® professional
+        {t.kicker}
       </p>
     </div>
   );

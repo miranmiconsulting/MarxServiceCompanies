@@ -2,15 +2,18 @@
 
 import { useActionState } from "react";
 import { submitEstimate, type EstimateState } from "@/app/actions/submit-estimate";
+import { getDict, type Lang } from "@/lib/i18n";
+
+type Props = { lang?: Lang };
 
 const initial: EstimateState = { ok: false, message: "" };
 
-export default function ContactForm() {
+export default function ContactForm({ lang = "en" }: Props) {
+  const t = getDict(lang).contact.form;
   const [state, formAction, isPending] = useActionState(submitEstimate, initial);
 
   return (
     <form action={formAction} noValidate className="space-y-3">
-      {/* Honeypot */}
       <input
         type="text"
         name="website"
@@ -22,7 +25,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="name" className="mb-1 block text-sm font-semibold">
-          Your Name
+          {t.nameLabel}
         </label>
         <input
           id="name"
@@ -36,7 +39,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="phone" className="mb-1 block text-sm font-semibold">
-          Phone Number
+          {t.phoneLabel}
         </label>
         <input
           id="phone"
@@ -44,14 +47,14 @@ export default function ContactForm() {
           type="tel"
           required
           autoComplete="tel"
-          placeholder="(210) 555-1234"
+          placeholder={t.phonePlaceholder}
           className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
         />
       </div>
 
       <div>
         <label htmlFor="service" className="mb-1 block text-sm font-semibold">
-          What do you need?
+          {t.serviceLabel}
         </label>
         <select
           id="service"
@@ -60,40 +63,36 @@ export default function ContactForm() {
           defaultValue=""
           className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
         >
-          <option value="" disabled>Select a service</option>
-          <option>Gutter Installation (5&quot; or 6&quot;)</option>
-          <option>Gutter Helmet® / Gutter Guards</option>
-          <option>Gutter Repair</option>
-          <option>Gutter Cleaning</option>
-          <option>Window Cleaning</option>
-          <option>Solar Panel Cleaning</option>
-          <option>Multiple / Not sure</option>
+          <option value="" disabled>{t.servicePlaceholder}</option>
+          {t.services.map((s) => (
+            <option key={s}>{s}</option>
+          ))}
         </select>
       </div>
 
       <div>
         <label htmlFor="address" className="mb-1 block text-sm font-semibold">
-          Property Address or Neighborhood
+          {t.addressLabel}
         </label>
         <input
           id="address"
           name="address"
           type="text"
           autoComplete="street-address"
-          placeholder="e.g., Stone Oak, 78258"
+          placeholder={t.addressPlaceholder}
           className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
         />
       </div>
 
       <div>
         <label htmlFor="message" className="mb-1 block text-sm font-semibold">
-          Project Details
+          {t.messageLabel}
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          placeholder="Single story or two story? Trees overhead? Any leaks or sagging?"
+          placeholder={t.messagePlaceholder}
           className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
         />
       </div>
@@ -103,13 +102,10 @@ export default function ContactForm() {
         disabled={isPending}
         className="btn btn-primary w-full disabled:opacity-60"
       >
-        {isPending ? "Sending…" : "Send My Estimate Request"}
+        {isPending ? t.submitting : t.submit}
       </button>
 
-      <p className="text-xs text-neutral-500">
-        By submitting you agree to be contacted by phone, text, or email about
-        your estimate. We do not share your info.
-      </p>
+      <p className="text-xs text-neutral-500">{t.consent}</p>
 
       {state.message && (
         <p

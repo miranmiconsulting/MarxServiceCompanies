@@ -1,20 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { business } from "@/lib/business";
-import { services } from "@/lib/services";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import StickyCallBar from "@/components/StickyCallBar";
+import { en } from "@/lib/i18n/en";
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
   title: {
-    default:
-      "Gutter Installation & Cleaning in San Antonio TX | Alamo Area Gutters by Marx",
+    default: en.pageMeta.home.title,
     template: "%s | Alamo Area Gutters by Marx",
   },
-  description:
-    "Trusted San Antonio gutter installation, gutter guards, repairs and cleaning since 2011. Free estimates from Alamo Area Gutters by Marx Service Companies. Call 210-419-1528.",
+  description: en.pageMeta.home.description,
   keywords: [
     "gutter installation San Antonio",
     "seamless gutters San Antonio",
@@ -26,6 +21,8 @@ export const metadata: Metadata = {
     "solar panel cleaning San Antonio",
     "Alamo Area Gutters",
     "Marx Service Companies",
+    "instalación canales San Antonio",
+    "limpieza canales San Antonio",
   ],
   authors: [{ name: business.legalName }],
   creator: business.legalName,
@@ -34,20 +31,19 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: business.siteUrl,
     siteName: `${business.brandName} ${business.brandSubtitle}`,
-    title:
-      "Alamo Area Gutters by Marx | San Antonio Gutter Pros Since 2011",
-    description:
-      "Seamless gutters, Gutter Helmet®, repairs, cleaning, window & solar cleaning across San Antonio. Free estimates.",
+    title: "Alamo Area Gutters by Marx | San Antonio Gutter Pros Since 2011",
+    description: "Seamless gutters, Gutter Helmet®, repairs, cleaning, window & solar cleaning across San Antonio. Free estimates.",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Alamo Area Gutters by Marx | San Antonio Gutter Pros Since 2011",
-    description:
-      "Seamless gutters, Gutter Helmet®, repairs, cleaning, window & solar cleaning across San Antonio. Free estimates.",
+    title: "Alamo Area Gutters by Marx | San Antonio Gutter Pros Since 2011",
+    description: "Seamless gutters, Gutter Helmet®, repairs, cleaning, window & solar cleaning across San Antonio. Free estimates.",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { "en-US": "/", "es-US": "/es" },
+  },
   manifest: "/site.webmanifest",
 };
 
@@ -79,14 +75,7 @@ const localBusinessJsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       opens: "08:00",
       closes: "18:00",
     },
@@ -94,25 +83,18 @@ const localBusinessJsonLd = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Gutter & Exterior Services",
-    itemListElement: services.map((s) => ({
+    itemListElement: en.services.items.map((s) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name: s.title },
     })),
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="font-sans">
-        <Navbar />
-        <main id="main">{children}</main>
-        <Footer />
-        <StickyCallBar />
+        {children}
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger

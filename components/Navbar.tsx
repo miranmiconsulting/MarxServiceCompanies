@@ -4,50 +4,58 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { business } from "@/lib/business";
+import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
+import LocaleSwitcher from "./LocaleSwitcher";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Recent Work" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+type Props = { lang?: Lang };
 
-export default function Navbar() {
+export default function Navbar({ lang = "en" }: Props) {
   const [open, setOpen] = useState(false);
+  const t = getDict(lang);
+  const prefix = pathPrefix(lang);
+
+  const links = [
+    { href: `${prefix}/`, label: t.nav.home },
+    { href: `${prefix}/services`, label: t.nav.services },
+    { href: `${prefix}/gallery`, label: t.nav.recentWork },
+    { href: `${prefix}/about`, label: t.nav.about },
+    { href: `${prefix}/contact`, label: t.nav.contact },
+  ];
 
   return (
     <>
-      {/* Utility bar — on mobile we hide the tagline and center the phone
-          so the number never wraps to two lines on small screens. */}
+      {/* Utility bar — on mobile show a value-prop message instead of the
+          phone (sticky CTA already covers calling). On sm+ show the tagline
+          left and the phone right with a locale switcher. */}
       <div className="bg-neutral-900 text-sm text-white">
-        <div className="container-page flex items-center justify-center gap-3 py-2 sm:justify-between">
+        <div className="container-page flex items-center justify-between gap-3 py-2">
+          <span className="font-semibold sm:hidden">{t.utility.mobileMessage}</span>
           <span className="hidden opacity-80 sm:inline">
-            {business.tagline} · Established {business.foundedYear}
+            {t.utility.tagline} · {t.utility.established}
           </span>
-          <a
-            href={`tel:${business.phoneE164}`}
-            className="whitespace-nowrap font-semibold text-white hover:no-underline"
-          >
-            📞 {business.phone}
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={`tel:${business.phoneE164}`}
+              className="hidden whitespace-nowrap font-semibold text-white hover:no-underline sm:inline"
+            >
+              📞 {business.phone}
+            </a>
+            <LocaleSwitcher lang={lang} ariaLabel={t.langSwitcher.aria} />
+          </div>
         </div>
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-neutral-100 bg-white">
+      <header className="sticky top-0 z-50 border-b border-neutral-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
         <nav
-          aria-label="Main"
-          className="container-page flex items-center justify-between gap-4 py-3 md:py-4"
+          aria-label={t.nav.aria}
+          className="container-page flex items-center justify-between gap-3 py-2 md:py-3"
         >
           <Link
-            href="/"
+            href={`${prefix}/`}
             className="flex shrink-0 items-center gap-3 py-1 hover:no-underline"
-            aria-label={`${business.brandName} ${business.brandSubtitle}, Home`}
+            aria-label={`${business.brandName} ${business.brandSubtitle}, ${t.nav.home}`}
           >
-            {/* Logo container — fixed aspect ratio, scales with height across breakpoints.
-                The logo image already says "Marx Service Companies", so we don't repeat it
-                in text — we add the public-facing brand name "Alamo Area Gutters" alongside. */}
             <Image
               src="/logo.svg"
               alt="Marx Service Companies. Servicing Your Projects."
@@ -55,9 +63,9 @@ export default function Navbar() {
               height={186}
               priority
               unoptimized
-              className="block h-12 w-auto sm:h-14 md:h-16"
+              className="block h-14 w-auto sm:h-16 md:h-20"
             />
-            <span className="hidden border-l border-neutral-200 pl-3 text-base font-extrabold leading-tight text-navy sm:block md:text-lg">
+            <span className="hidden border-l border-neutral-200 pl-3 text-base font-extrabold leading-tight text-navy md:block md:text-lg">
               {business.brandName}
             </span>
           </Link>
@@ -67,16 +75,16 @@ export default function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="font-semibold text-navy hover:text-brand hover:no-underline"
+                className="font-semibold text-navy transition-colors hover:text-brand hover:no-underline"
               >
                 {l.label}
               </Link>
             ))}
             <Link
-              href="/contact#estimate"
-              className="rounded-lg bg-accent px-4 py-2 font-bold text-white hover:bg-accent-dark hover:no-underline"
+              href={`${prefix}/contact#estimate`}
+              className="rounded-lg bg-accent px-4 py-2 font-bold text-white transition hover:bg-accent-dark hover:no-underline"
             >
-              Free Estimate
+              {t.nav.freeEstimate}
             </Link>
           </div>
 
@@ -86,7 +94,7 @@ export default function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
-            className="-mr-2 grid h-12 w-12 place-items-center rounded-md text-navy hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand md:hidden"
+            className="-mr-2 grid h-12 w-12 place-items-center rounded-md text-navy transition hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand md:hidden"
           >
             {open ? (
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
@@ -119,7 +127,7 @@ export default function Navbar() {
               href={`tel:${business.phoneE164}`}
               className="block py-4 text-base font-semibold text-navy hover:no-underline"
             >
-              📞 Call {business.phone}
+              {t.nav.callPhone}
             </a>
           </div>
         )}
