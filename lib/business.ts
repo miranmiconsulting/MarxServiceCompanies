@@ -19,7 +19,7 @@ export const business = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.alamoareagutterhelmet.com",
   social: {
     facebook: "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
+    instagram: "https://www.instagram.com/marxservicecompanies/",
   },
   hours: {
     weekdays: "Mon – Sat · 8:00 AM – 6:00 PM",
