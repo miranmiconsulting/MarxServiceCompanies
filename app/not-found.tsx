@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="container-page max-w-xl text-center">
         <h1>Page Not Found</h1>
         <p className="mt-3 text-neutral-700">
-          That page doesn&apos;t exist — but we&apos;re still here. Call or text{" "}
+          That page doesn&apos;t exist, but we&apos;re still here. Call or text{" "}
           {business.phone} for a free estimate.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">

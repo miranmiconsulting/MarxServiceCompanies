@@ -18,15 +18,16 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Utility bar */}
-      <div className="bg-neutral-900 text-white text-sm">
-        <div className="container-page flex items-center justify-between py-2">
-          <span className="opacity-80">
+      {/* Utility bar — on mobile we hide the tagline and center the phone
+          so the number never wraps to two lines on small screens. */}
+      <div className="bg-neutral-900 text-sm text-white">
+        <div className="container-page flex items-center justify-center gap-3 py-2 sm:justify-between">
+          <span className="hidden opacity-80 sm:inline">
             {business.tagline} · Established {business.foundedYear}
           </span>
           <a
             href={`tel:${business.phoneE164}`}
-            className="text-white hover:no-underline font-semibold"
+            className="whitespace-nowrap font-semibold text-white hover:no-underline"
           >
             📞 {business.phone}
           </a>
@@ -42,14 +43,14 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex shrink-0 items-center gap-3 py-1 hover:no-underline"
-            aria-label={`${business.brandName} ${business.brandSubtitle} — Home`}
+            aria-label={`${business.brandName} ${business.brandSubtitle}, Home`}
           >
             {/* Logo container — fixed aspect ratio, scales with height across breakpoints.
                 The logo image already says "Marx Service Companies", so we don't repeat it
                 in text — we add the public-facing brand name "Alamo Area Gutters" alongside. */}
             <Image
               src="/logo.svg"
-              alt="Marx Service Companies — Servicing Your Projects"
+              alt="Marx Service Companies. Servicing Your Projects."
               width={319}
               height={186}
               priority
@@ -81,30 +82,42 @@ export default function Navbar() {
 
           <button
             type="button"
-            aria-label="Toggle menu"
+            aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
-            className="text-2xl text-navy md:hidden"
+            className="-mr-2 grid h-12 w-12 place-items-center rounded-md text-navy hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand md:hidden"
           >
-            ☰
+            {open ? (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+                <line x1="6" y1="6" x2="18" y2="18" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+              </svg>
+            ) : (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+                <line x1="4" y1="7" x2="20" y2="7" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="17" x2="20" y2="17" />
+              </svg>
+            )}
           </button>
         </nav>
 
         {open && (
-          <div className="border-t border-neutral-100 bg-white px-5 pb-4 pt-2 md:hidden">
+          <div id="mobile-nav" className="border-t border-neutral-100 bg-white px-5 pb-4 pt-2 md:hidden">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-neutral-100 py-3 font-semibold text-navy hover:no-underline"
+                className="block border-b border-neutral-100 py-4 text-base font-semibold text-navy hover:no-underline"
               >
                 {l.label}
               </Link>
             ))}
             <a
               href={`tel:${business.phoneE164}`}
-              className="block py-3 font-semibold text-navy hover:no-underline"
+              className="block py-4 text-base font-semibold text-navy hover:no-underline"
             >
               📞 Call {business.phone}
             </a>

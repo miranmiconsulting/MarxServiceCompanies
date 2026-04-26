@@ -8,13 +8,13 @@ export default function StickyCallBar() {
     >
       <a
         href={`tel:${business.phoneE164}`}
-        className="bg-accent py-3 text-center font-bold text-white hover:no-underline"
+        className="bg-accent py-4 text-center text-base font-bold text-white hover:no-underline"
       >
         📞 Call
       </a>
       <a
         href={`sms:${business.phoneE164}`}
-        className="bg-navy py-3 text-center font-bold text-white hover:no-underline"
+        className="bg-navy py-4 text-center text-base font-bold text-white hover:no-underline"
       >
         💬 Text
       </a>

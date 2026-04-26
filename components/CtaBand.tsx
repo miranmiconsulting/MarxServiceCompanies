@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default function CtaBand({
-  title = "Free Estimates — Same-Day Response",
+  title = "Free Estimates with Same Day Response",
   body = "Tell us about your project. We'll come measure, give honest recommendations, and a written quote with no pressure.",
   inSection = true,
 }: Props) {

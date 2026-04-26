@@ -4,8 +4,8 @@ import ContactForm from "@/components/ContactForm";
 import { business } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Contact & Free Estimate — San Antonio Gutter Pros",
-  description: `Request a free gutter estimate in San Antonio TX. Call or text ${business.owner} at 210-419-1528 — Alamo Area Gutters by Marx Service Companies, family-run since ${business.foundedYear}.`,
+  title: "Contact & Free Estimate | San Antonio Gutter Pros",
+  description: `Request a free gutter estimate in San Antonio TX. Call or text ${business.owner} at 210-419-1528. Alamo Area Gutters by Marx Service Companies, family run since ${business.foundedYear}.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
             <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
 
             <p className="mt-4 text-xs uppercase tracking-wide text-neutral-500">Service Area</p>
-            <p>{business.addressLocality}, {business.addressRegion} & surrounding areas — Bexar County and beyond.</p>
+            <p>{business.addressLocality}, {business.addressRegion} and surrounding areas. Bexar County and beyond.</p>
 
             <p className="mt-4 text-xs uppercase tracking-wide text-neutral-500">Hours</p>
             <p>{business.hours.weekdays}<br />{business.hours.sunday}</p>

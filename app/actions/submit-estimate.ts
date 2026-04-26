@@ -19,7 +19,7 @@ export async function submitEstimate(
   // Honeypot — bots fill hidden fields, humans don't.
   const honeypot = String(formData.get("website") ?? "").trim();
 
-  if (honeypot) return { ok: true, message: "Thanks — we'll be in touch." };
+  if (honeypot) return { ok: true, message: "Thanks, we'll be in touch." };
 
   if (!name || !phone || !service) {
     return {
@@ -28,7 +28,7 @@ export async function submitEstimate(
     };
   }
 
-  const subject = `Free Estimate Request — ${service}`;
+  const subject = `Free Estimate Request: ${service}`;
   const body = [
     `Name: ${name}`,
     `Phone: ${phone}`,
@@ -88,6 +88,6 @@ export async function submitEstimate(
 
   return {
     ok: true,
-    message: `Thanks ${name.split(" ")[0]} — we got it. We'll follow up within one business day.`,
+    message: `Thanks ${name.split(" ")[0]}, we got it. We'll follow up within one business day.`,
   };
 }

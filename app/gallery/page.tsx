@@ -7,7 +7,7 @@ import { business } from "@/lib/business";
 import { recentWork } from "@/lib/recentWork";
 
 export const metadata: Metadata = {
-  title: "Recent Work — San Antonio Gutter Installs & Cleanings",
+  title: "Recent Work | San Antonio Gutter Installs & Cleanings",
   description:
     "Recent gutter installation, cleaning, and maintenance projects from Marx Service Companies in San Antonio TX. Watch real reels from the field.",
   alternates: { canonical: "/gallery" },

@@ -60,7 +60,7 @@ export default function ContactForm() {
           defaultValue=""
           className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
         >
-          <option value="" disabled>— Select a service —</option>
+          <option value="" disabled>Select a service</option>
           <option>Gutter Installation (5&quot; or 6&quot;)</option>
           <option>Gutter Helmet® / Gutter Guards</option>
           <option>Gutter Repair</option>

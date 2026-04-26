@@ -5,8 +5,8 @@ import CtaBand from "@/components/CtaBand";
 import { business } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: `About ${business.legalName} — San Antonio Gutter Specialist Since ${business.foundedYear}`,
-  description: `${business.legalName} is a family-run gutter and exterior services company in San Antonio, TX. Founded by ${business.owner} in ${business.foundedYear}. Free estimates — call 210-419-1528.`,
+  title: `About ${business.legalName} | San Antonio Gutter Specialist Since ${business.foundedYear}`,
+  description: `${business.legalName} is a family run gutter and exterior services company in San Antonio, TX. Founded by ${business.owner} in ${business.foundedYear}. Free estimates. Call 210-419-1528.`,
   alternates: { canonical: "/about" },
 };
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
           </p>
           <p className="mt-3 text-neutral-700">
             We started with gutters and that&apos;s still the heart of what we
-            do — seamless 5&quot; and 6&quot; installs, Gutter Helmet®
+            do. Seamless 5&quot; and 6&quot; installs, Gutter Helmet®
             protection, repairs, and cleanings. Over time, customers asked for
             more, so we added window cleaning and solar panel cleaning to round
             out the exterior work that keeps a home running.
@@ -39,7 +39,7 @@ export default function AboutPage() {
             It means the owner picks up the phone. It means we show up when we
             say we will. It means we measure twice, quote once, and don&apos;t
             change the number on you halfway through. It means cleaning up
-            before we leave so you can&apos;t tell where we worked — except your
+            before we leave so you can&apos;t tell where we worked, except your
             gutters drain again.
           </p>
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
           <p className="mt-3 text-neutral-700">
             We&apos;re based in {business.addressLocality},{" "}
             {business.addressRegion} and serve homeowners across Bexar County
-            and the surrounding communities — including Stone Oak, Alamo
+            and the surrounding communities, including Stone Oak, Alamo
             Heights, Helotes, Boerne, Bulverde, Schertz, Cibolo, Selma,
             Universal City, Live Oak, Converse, and New Braunfels.
           </p>
@@ -62,11 +62,11 @@ export default function AboutPage() {
               className="h-[120px] w-[120px] flex-none"
             />
             <p className="min-w-[240px] flex-1 text-neutral-700">
-              We&apos;re a certified installer of Gutter Helmet®, the original
-              patented gutter protection system. It&apos;s not the cheapest
-              option — it&apos;s the one that lasts, and it&apos;s backed by a
-              transferable performance warranty. If a screen or cover is a
-              better fit for your home, we&apos;ll tell you that too.
+              Marx Service Companies is the only certified Gutter Helmet®
+              installer in the area, ensuring the system is installed to
+              manufacturer standards and backed by a transferable performance
+              warranty. If a screen or cover is a better fit for your home,
+              we&apos;ll tell you that too.
             </p>
           </div>
         </div>

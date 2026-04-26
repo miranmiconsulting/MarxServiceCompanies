@@ -9,8 +9,12 @@ export default function Hero() {
       <RainScene />
       <div className="container-page relative z-10 grid gap-10 md:grid-cols-[1.4fr,1fr] md:items-center">
         <div>
-          <h1 className="text-balance text-white">
-            San Antonio Gutter Pros — Installation, Guards, Repair & Cleaning
+          <span className="inline-flex items-center gap-2 rounded-full bg-accent/15 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-accent/40">
+            <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+            Only Certified Installer in the Area
+          </span>
+          <h1 className="mt-3 text-balance text-white">
+            San Antonio Gutter Pros for Installation, Guards, Repair &amp; Cleaning
           </h1>
           <p className="mt-4 max-w-xl text-lg text-white/90">
             Seamless 5&quot; and 6&quot; gutters, Gutter Helmet® protection, and

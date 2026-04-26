@@ -1,7 +1,7 @@
 const reasons = [
   {
     title: "Established 2011",
-    body: "Over a decade serving San Antonio homeowners — referrals are most of our work.",
+    body: "Over a decade serving San Antonio homeowners. Referrals are most of our work.",
   },
   {
     title: "Owner On Every Job",
@@ -9,7 +9,7 @@ const reasons = [
   },
   {
     title: "Free, No-Pressure Estimates",
-    body: "We measure, recommend, and quote — no hard sell, no surprise add-ons.",
+    body: "We measure, recommend, and quote. No hard sell. No surprise extras.",
   },
   {
     title: "Authorized Gutter Helmet® Installer",

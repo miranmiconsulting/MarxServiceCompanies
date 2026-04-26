@@ -22,7 +22,7 @@ export const business = {
     instagram: "https://www.instagram.com/marxservicecompanies/",
   },
   hours: {
-    weekdays: "Mon – Sat · 8:00 AM – 6:00 PM",
+    weekdays: "Mon to Sat · 8:00 AM to 6:00 PM",
     sunday: "Sun · By appointment",
   },
   serviceAreas: [

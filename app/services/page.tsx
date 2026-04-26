@@ -4,9 +4,9 @@ import CtaBand from "@/components/CtaBand";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Gutter Services in San Antonio TX — Install, Guards, Repair, Cleaning",
+  title: "Gutter Services in San Antonio TX | Install, Guards, Repair, Cleaning",
   description:
-    "Seamless gutter installation, Gutter Helmet®, repairs, gutter cleaning, window cleaning and solar panel cleaning in San Antonio TX. Free estimates — call 210-419-1528.",
+    "Seamless gutter installation, Gutter Helmet®, repairs, gutter cleaning, window cleaning and solar panel cleaning in San Antonio TX. Free estimates. Call 210-419-1528.",
   alternates: { canonical: "/services" },
 };
 
@@ -58,7 +58,7 @@ export default function ServicesPage() {
 
       <CtaBand
         title="Not Sure What You Need? Just Ask."
-        body="We'll come look, tell you straight, and quote in writing — at no charge."
+        body="We'll come look, tell you straight, and quote in writing. No charge."
       />
     </>
   );

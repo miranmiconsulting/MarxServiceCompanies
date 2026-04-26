@@ -84,10 +84,11 @@
   will-change: transform;
 }
 
-/* Lighter rain density on small screens to save battery + visual noise */
+/* Mobile: keep all 25 drops visible (the rain felt invisible at half
+   density) but make each drop slightly thicker so the motion reads
+   from a phone screen at arm's length. */
 @media (max-width: 640px) {
-  .raindrop:nth-child(2n) { display: none; }
-  .raindrop { width: 1px; height: 12px; }
+  .raindrop { width: 1.5px; height: 14px; }
 }
 
 @keyframes rain-fall {
