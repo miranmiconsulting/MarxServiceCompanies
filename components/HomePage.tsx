@@ -7,8 +7,10 @@ import CtaBand from "@/components/CtaBand";
 import AreasServed from "@/components/AreasServed";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import InstagramScript from "@/components/InstagramScript";
-import Testimonials from "@/components/Testimonials";
 import Reveal from "@/components/Reveal";
+// <Testimonials /> intentionally left unmounted for now — turn it back
+// on by importing from @/components/Testimonials and re-adding the JSX
+// once real reviews + Google rating are ready in business.trust.
 import { recentWork } from "@/lib/recentWork";
 import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
 
@@ -27,7 +29,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <TrustBar lang={lang} />
       <ServicesGrid lang={lang} compact />
       <WhyUs lang={lang} />
-      <Testimonials lang={lang} />
 
       <section className="py-14">
         <div className="container-page">

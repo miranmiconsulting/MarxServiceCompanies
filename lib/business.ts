@@ -43,13 +43,14 @@ export const business = {
     "New Braunfels",
   ],
   // Trust signals — placeholder values, owner should confirm/correct.
-  // Empty strings hide the badge cleanly; replace with real values to ship.
+  // Reviews are intentionally OFF for now — set googleRating to a value
+  // like "5.0" + a real count + (optional) URL to enable the ReviewsBadge.
   trust: {
-    googleRating: "5.0",       // e.g. "4.9"; set "" to hide reviews badge
-    googleReviewCount: 0,      // set 0 to hide the count
-    googleReviewsUrl: "",      // optional: full Google reviews link
-    insured: true,             // shows "Fully Insured" pill in trust bar
-    bbb: false,                // shows "BBB Accredited" pill if true
+    googleRating: "",          // "" hides the ReviewsBadge everywhere
+    googleReviewCount: 0,      // hides the "· N reviews" suffix
+    googleReviewsUrl: "",      // optional outbound link wrapping the badge
+    insured: true,             // "Fully Insured" pill in TrustBar
+    bbb: false,                // "BBB Accredited" pill if true
   },
 } as const;
 
