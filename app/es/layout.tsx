@@ -8,7 +8,7 @@ export default function EsLayout({ children }: { children: React.ReactNode }) {
     <>
       <HtmlLangSetter lang="es" />
       <Navbar lang="es" />
-      <main id="main">{children}</main>
+      <main id="main" className="pb-20 md:pb-0">{children}</main>
       <Footer lang="es" />
       <StickyCallBar lang="es" />
     </>

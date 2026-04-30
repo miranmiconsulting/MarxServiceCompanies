@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { Phone, Menu, X } from "lucide-react";
 import { business } from "@/lib/business";
 import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
 import LocaleSwitcher from "./LocaleSwitcher";
@@ -24,19 +25,19 @@ export default function Navbar({ lang = "en" }: Props) {
 
   return (
     <>
-      {/* Utility bar — value-prop on mobile, tagline + phone on sm+.
-          Locale switcher now lives in the sticky header (anchored), not here. */}
+      {/* Utility bar — value-prop on mobile, tagline + phone on sm+. */}
       <div className="bg-neutral-900 text-sm text-white">
         <div className="container-page flex items-center justify-between gap-3 py-2">
           <span className="font-semibold sm:hidden">{t.utility.mobileMessage}</span>
-          <span className="hidden opacity-80 sm:inline">
+          <span className="hidden opacity-90 sm:inline">
             {t.utility.tagline} · {t.utility.established}
           </span>
           <a
             href={`tel:${business.phoneE164}`}
-            className="hidden whitespace-nowrap font-semibold text-white hover:no-underline sm:inline"
+            className="hidden items-center gap-1.5 whitespace-nowrap font-semibold text-white hover:no-underline sm:inline-flex"
           >
-            📞 {business.phone}
+            <Phone size={14} strokeWidth={2.5} aria-hidden="true" />
+            <span>{business.phone}</span>
           </a>
         </div>
       </div>
@@ -61,7 +62,7 @@ export default function Navbar({ lang = "en" }: Props) {
               unoptimized
               className="block h-14 w-auto sm:h-16 md:h-20"
             />
-            <span className="hidden border-l border-neutral-200 pl-3 text-base font-extrabold leading-tight text-navy md:block md:text-lg">
+            <span className="hidden border-l border-neutral-200 pl-3 font-display text-base font-extrabold leading-tight text-navy md:block md:text-lg">
               {business.brandName}
             </span>
           </Link>
@@ -85,8 +86,18 @@ export default function Navbar({ lang = "en" }: Props) {
             </Link>
           </div>
 
-          {/* Mobile: locale switcher anchored next to the hamburger */}
+          {/* Mobile: phone number anchored as a tappable digit link beside
+              the hamburger (per audit C2 — phone must be one tap away in the
+              header, not just behind a Call button). */}
           <div className="flex items-center gap-2 md:hidden">
+            <a
+              href={`tel:${business.phoneE164}`}
+              className="inline-flex h-11 items-center gap-1.5 rounded-md px-2 font-semibold text-navy hover:bg-neutral-100 hover:no-underline"
+              aria-label={`${t.nav.callPhone}`}
+            >
+              <Phone size={18} strokeWidth={2.5} aria-hidden="true" />
+              <span className="hidden xs:inline whitespace-nowrap text-sm">{business.phone}</span>
+            </a>
             <LocaleSwitcher lang={lang} ariaLabel={t.langSwitcher.aria} />
             <button
               type="button"
@@ -96,18 +107,11 @@ export default function Navbar({ lang = "en" }: Props) {
               onClick={() => setOpen((v) => !v)}
               className="-mr-2 grid h-12 w-12 place-items-center rounded-md text-navy transition hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
-            {open ? (
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
-                <line x1="6" y1="6" x2="18" y2="18" />
-                <line x1="18" y1="6" x2="6" y2="18" />
-              </svg>
-            ) : (
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
-                <line x1="4" y1="7" x2="20" y2="7" />
-                <line x1="4" y1="12" x2="20" y2="12" />
-                <line x1="4" y1="17" x2="20" y2="17" />
-              </svg>
-            )}
+              {open ? (
+                <X size={28} strokeWidth={2.4} aria-hidden="true" />
+              ) : (
+                <Menu size={28} strokeWidth={2.4} aria-hidden="true" />
+              )}
             </button>
           </div>
         </nav>
@@ -126,9 +130,10 @@ export default function Navbar({ lang = "en" }: Props) {
             ))}
             <a
               href={`tel:${business.phoneE164}`}
-              className="block py-4 text-base font-semibold text-navy hover:no-underline"
+              className="flex items-center gap-2 py-4 text-base font-semibold text-navy hover:no-underline"
             >
-              {t.nav.callPhone}
+              <Phone size={18} strokeWidth={2.5} aria-hidden="true" />
+              <span>{business.phone}</span>
             </a>
           </div>
         )}

@@ -42,6 +42,15 @@ export const business = {
     "Converse",
     "New Braunfels",
   ],
+  // Trust signals — placeholder values, owner should confirm/correct.
+  // Empty strings hide the badge cleanly; replace with real values to ship.
+  trust: {
+    googleRating: "5.0",       // e.g. "4.9"; set "" to hide reviews badge
+    googleReviewCount: 0,      // set 0 to hide the count
+    googleReviewsUrl: "",      // optional: full Google reviews link
+    insured: true,             // shows "Fully Insured" pill in trust bar
+    bbb: false,                // shows "BBB Accredited" pill if true
+  },
 } as const;
 
 export type Business = typeof business;

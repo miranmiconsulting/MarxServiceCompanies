@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import ServiceIcon from "./ServiceIcon";
 
 type Props = { lang?: Lang; compact?: boolean };
 
@@ -19,7 +20,9 @@ export default function ServicesGrid({ lang = "en", compact = false }: Props) {
           {list.map((s, i) => (
             <Reveal key={s.slug} delay={i * 50}>
               <article id={s.slug} className="card-base h-full transition hover:-translate-y-1">
-                <div className="icon-chip">{s.icon}</div>
+                <div className="icon-chip">
+                  <ServiceIcon slug={s.slug} size={22} />
+                </div>
                 <h3>{s.title}</h3>
                 <p className="mt-1 text-neutral-700">{s.short}</p>
               </article>

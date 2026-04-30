@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { CheckCircle2, AlertTriangle } from "lucide-react";
 import { submitEstimate, type EstimateState } from "@/app/actions/submit-estimate";
 import { getDict, type Lang } from "@/lib/i18n";
 
@@ -105,18 +106,23 @@ export default function ContactForm({ lang = "en" }: Props) {
         {isPending ? t.submitting : t.submit}
       </button>
 
-      <p className="text-xs text-neutral-500">{t.consent}</p>
+      <p className="text-sm text-neutral-600">{t.consent}</p>
 
       {state.message && (
         <p
           role="status"
           className={
             state.ok
-              ? "rounded-md bg-accent/10 px-3 py-2 text-sm font-semibold text-accent-dark"
-              : "rounded-md bg-red-50 px-3 py-2 text-sm font-semibold text-red-700"
+              ? "inline-flex items-start gap-2 rounded-md bg-cert/10 px-3 py-2 text-sm font-semibold text-cert-dark"
+              : "inline-flex items-start gap-2 rounded-md bg-red-50 px-3 py-2 text-sm font-semibold text-red-700"
           }
         >
-          {state.ok ? "✓ " : "⚠ "}{state.message}
+          {state.ok ? (
+            <CheckCircle2 size={18} strokeWidth={2.5} className="mt-px flex-none" aria-hidden="true" />
+          ) : (
+            <AlertTriangle size={18} strokeWidth={2.5} className="mt-px flex-none" aria-hidden="true" />
+          )}
+          <span>{state.message}</span>
         </p>
       )}
     </form>

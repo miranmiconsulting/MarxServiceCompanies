@@ -7,12 +7,16 @@ import CtaBand from "@/components/CtaBand";
 import AreasServed from "@/components/AreasServed";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import InstagramScript from "@/components/InstagramScript";
+import Testimonials from "@/components/Testimonials";
 import Reveal from "@/components/Reveal";
 import { recentWork } from "@/lib/recentWork";
 import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
 
 const FEATURED = recentWork.slice(0, 2);
 
+// Page composition follows the Trust & Authority pattern recommended by
+// the design system: Hero → Trust signals → Services → Why us →
+// Testimonials (social proof) → Recent work → CTA → Service area.
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = getDict(lang).recentWork;
   const prefix = pathPrefix(lang);
@@ -23,6 +27,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <TrustBar lang={lang} />
       <ServicesGrid lang={lang} compact />
       <WhyUs lang={lang} />
+      <Testimonials lang={lang} />
 
       <section className="py-14">
         <div className="container-page">

@@ -1,7 +1,24 @@
 import type { Metadata, Viewport } from "next";
+import { Lexend, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { business } from "@/lib/business";
 import { en } from "@/lib/i18n/en";
+
+// Trust & Authority pattern fonts: Lexend for display (corporate, accessible)
+// + Source Sans 3 for body (highly readable, professional). Variables are
+// referenced from tailwind.config.ts under fontFamily.sans / .display.
+const fontDisplay = Lexend({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+const fontBody = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
@@ -92,7 +109,7 @@ const localBusinessJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${fontDisplay.variable} ${fontBody.variable}`}>
       <body className="font-sans">
         {children}
         <script

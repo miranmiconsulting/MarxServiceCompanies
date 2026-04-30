@@ -14,8 +14,9 @@ export default function LocaleSwitcher({ lang, ariaLabel = "Change language" }: 
   const otherHref = otherLocaleHref(lang, pathname);
   const isEn = lang === "en";
 
+  // 44×44 minimum tap target per WCAG/Apple HIG; pill is 11 (h) tall × auto wide.
   const base =
-    "px-2.5 py-1.5 text-xs font-extrabold leading-none transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
+    "inline-flex h-11 min-w-[44px] items-center justify-center px-3 text-sm font-extrabold leading-none transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
   const active = "bg-navy text-white hover:no-underline";
   const inactive = "bg-white text-navy hover:bg-neutral-100 hover:no-underline";
 
@@ -29,15 +30,17 @@ export default function LocaleSwitcher({ lang, ariaLabel = "Change language" }: 
         href={isEn ? pathname : otherHref}
         className={`${base} ${isEn ? active : inactive}`}
         aria-current={isEn ? "true" : undefined}
+        aria-label="English"
         prefetch
       >
         EN
       </Link>
-      <span aria-hidden="true" className="h-4 w-px bg-neutral-300" />
+      <span aria-hidden="true" className="h-5 w-px bg-neutral-300" />
       <Link
         href={!isEn ? pathname : otherHref}
         className={`${base} ${!isEn ? active : inactive}`}
         aria-current={!isEn ? "true" : undefined}
+        aria-label="Español"
         prefetch
       >
         ES
