@@ -7,7 +7,7 @@ export const business = {
   brandSubtitle: "by Marx Service Companies",
   tagline: "Servicing Your Projects",
   owner: "Marcos Munoz",
-  foundedYear: 2011,
+  foundedYear: 2015,
   phone: "(210) 419-1528",
   phoneE164: "+12104191528",
   email: "info@alamoareagutters.com",

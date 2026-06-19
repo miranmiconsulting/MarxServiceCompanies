@@ -25,16 +25,21 @@ export default function Navbar({ lang = "en" }: Props) {
 
   return (
     <>
-      {/* Utility bar — value-prop on mobile, tagline + phone on sm+. */}
+      {/* Utility bar — anchors the strongest trust message at the very top.
+          Mobile: just the certified line (truncates to fit). sm+: certified
+          line on the left + phone on the right. Established year is still
+          present in the trust bar, hero badges, footer, and JSON-LD. */}
       <div className="bg-neutral-900 text-sm text-white">
         <div className="container-page flex items-center justify-between gap-3 py-2">
-          <span className="font-semibold sm:hidden">{t.utility.mobileMessage}</span>
-          <span className="hidden opacity-90 sm:inline">
-            {t.utility.tagline} · {t.utility.established}
+          <span className="min-w-0 truncate font-semibold sm:hidden" title={t.utility.mobileMessage}>
+            {t.utility.mobileMessage}
+          </span>
+          <span className="hidden min-w-0 truncate opacity-90 sm:inline-block" title={t.utility.tagline}>
+            {t.utility.tagline}
           </span>
           <a
             href={`tel:${business.phoneE164}`}
-            className="hidden items-center gap-1.5 whitespace-nowrap font-semibold text-white hover:no-underline sm:inline-flex"
+            className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap font-semibold text-white hover:no-underline sm:inline-flex"
           >
             <Phone size={14} strokeWidth={2.5} aria-hidden="true" />
             <span>{business.phone}</span>

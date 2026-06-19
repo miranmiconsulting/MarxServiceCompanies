@@ -29,8 +29,10 @@ export const es: Dict = {
   },
 
   utility: {
-    mobileMessage: "Estimados Gratis Disponibles",
-    tagline: "A Su Servicio",
+    // Top-bar message anchored across all viewports — leads with the
+    // differentiator that nobody else in the area can claim.
+    mobileMessage: "Único Instalador Certificado de Gutter Helmet® en el Área",
+    tagline: "Único Instalador Certificado de Gutter Helmet® en el Área",
     established: `Desde ${business.foundedYear}`,
   },
 
@@ -68,7 +70,7 @@ export const es: Dict = {
     items: [
       "Único Instalador Certificado de Gutter Helmet® en el Área",
       `Desde ${business.foundedYear}`,
-      `El dueño ${business.owner} en cada trabajo`,
+      "Descuentos para militares y primeros respondedores",
       "Estimados gratis · Llame o envíe un mensaje",
       "Servicio en San Antonio y áreas cercanas",
     ],
