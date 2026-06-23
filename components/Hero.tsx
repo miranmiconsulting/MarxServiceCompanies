@@ -66,13 +66,18 @@ export default function Hero({ lang = "en" }: Props) {
         >
           <div className="h-1 bg-cert" aria-hidden="true" />
           <div className="p-5">
-            <Image
-              src="/certified.png"
-              alt={t.certCardBadgeAlt}
-              width={360}
-              height={360}
-              className="mx-auto h-[150px] w-[150px] sm:h-[170px] sm:w-[170px]"
-            />
+            {/* White pedestal frames the raster seal as an intentional stamp,
+                avoids the halo that aggressive transparency-keying produces on
+                a JPEG-like source. */}
+            <div className="mx-auto grid h-[170px] w-[170px] place-items-center overflow-hidden rounded-2xl bg-white p-2 shadow-md ring-1 ring-cert/20 sm:h-[190px] sm:w-[190px]">
+              <Image
+                src="/certified.png"
+                alt={t.certCardBadgeAlt}
+                width={480}
+                height={480}
+                className="h-full w-full object-contain"
+              />
+            </div>
             <strong className="mt-3 block font-display text-base font-extrabold leading-tight text-white sm:text-lg">
               {t.certCardTitle}
             </strong>

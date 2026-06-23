@@ -29,14 +29,16 @@ export default function AboutPage({ lang }: { lang: Lang }) {
 
           <Reveal delay={160}>
             <h2 className="mt-10">{t.certH2}</h2>
-            <div className="mt-4 flex flex-wrap gap-5">
-              <Image
-                src="/certified.png"
-                alt={t.certBadgeAlt}
-                width={360}
-                height={360}
-                className="h-[120px] w-[120px] flex-none cert-float"
-              />
+            <div className="mt-4 flex flex-wrap items-center gap-5">
+              <div className="grid h-[140px] w-[140px] flex-none place-items-center overflow-hidden rounded-2xl bg-white p-2 shadow-md ring-1 ring-cert/20 cert-float">
+                <Image
+                  src="/certified.png"
+                  alt={t.certBadgeAlt}
+                  width={480}
+                  height={480}
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <p className="min-w-[240px] flex-1 text-neutral-700">{t.certP}</p>
             </div>
           </Reveal>
