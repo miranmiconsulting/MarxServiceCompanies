@@ -5,16 +5,14 @@ import ServicesGrid from "@/components/ServicesGrid";
 import WhyUs from "@/components/WhyUs";
 import CtaBand from "@/components/CtaBand";
 import AreasServed from "@/components/AreasServed";
-import InstagramEmbed from "@/components/InstagramEmbed";
 import InstagramScript from "@/components/InstagramScript";
+import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
 // <Testimonials /> intentionally left unmounted for now — turn it back
 // on by importing from @/components/Testimonials and re-adding the JSX
 // once real reviews + Google rating are ready in business.trust.
-import { recentWork } from "@/lib/recentWork";
+import { getFeaturedWork, projectCaption } from "@/lib/recentWork";
 import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
-
-const FEATURED = recentWork.slice(0, 2);
 
 // Page composition follows the Trust & Authority pattern recommended by
 // the design system: Hero → Trust signals → Services → Why us →
@@ -22,7 +20,8 @@ const FEATURED = recentWork.slice(0, 2);
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = getDict(lang).recentWork;
   const prefix = pathPrefix(lang);
-  const captions = t.captions;
+  const featured = getFeaturedWork(2);
+  const anyEmbed = featured.some((p) => p.photos.length === 0 && !!p.instagramUrl);
   return (
     <>
       <Hero lang={lang} />
@@ -38,18 +37,16 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </Reveal>
 
           <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-6">
-            {FEATURED.map((item, i) => (
+            {featured.map((project, i) => (
               <Reveal
-                key={item.url}
+                key={project.slug}
                 delay={i * 100}
                 className="m-0 w-full max-w-[540px] sm:w-[calc(50%-12px)]"
               >
-                <figure className="m-0">
-                  <InstagramEmbed url={item.url} />
-                  <figcaption className="mt-2 text-center text-sm font-semibold text-neutral-700">
-                    {captions[i]}
-                  </figcaption>
-                </figure>
+                <ProjectCard
+                  project={project}
+                  caption={projectCaption(project, lang)}
+                />
               </Reveal>
             ))}
           </div>
@@ -60,7 +57,9 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </Link>
           </div>
         </div>
-        <InstagramScript />
+        {/* embed.js loads only if at least one featured item actually uses
+            an Instagram embed — saves ~150KB on photo-only homepages. */}
+        {anyEmbed && <InstagramScript />}
       </section>
 
       <CtaBand lang={lang} />

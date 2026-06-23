@@ -1,0 +1,85 @@
+# Pages CMS configuration — defines what Marcos sees when he opens
+# app.pagescms.org for this repo. Content commits to git as Markdown
+# frontmatter; Vercel auto-deploys on commit (~60s update cycle).
+#
+# Docs: https://pagescms.org/docs/configuration/
+
+media:
+  - name: images
+    label: Photos
+    input: public/recent-work
+    output: /recent-work
+
+content:
+  - name: recent-work
+    label: Recent Work
+    type: collection
+    path: content/recent-work
+    format: yaml-frontmatter
+    filename: "{fields.order}-{fields.title|slugify}.md"
+    view:
+      fields: [title, service_type, featured, order]
+      sort:
+        - field: order
+          order: asc
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Project title
+        type: string
+        required: true
+        description: "Short internal name (e.g. 'Stone Oak gutter install'). Not shown on the site — used to organize."
+
+      - name: caption_en
+        label: Caption (English)
+        type: text
+        required: true
+        description: "One-line description shown on the website."
+
+      - name: caption_es
+        label: Caption (Spanish) — optional
+        type: text
+        description: "Spanish version of the caption. Leave blank to use English on the Spanish site too."
+
+      - name: service_type
+        label: Service type
+        type: select
+        default: gutter_install
+        options:
+          values:
+            - { value: gutter_install, label: "Gutter installation" }
+            - { value: gutter_helmet, label: "Gutter Helmet" }
+            - { value: repair, label: "Repair" }
+            - { value: cleaning, label: "Gutter cleaning" }
+            - { value: window_cleaning, label: "Window cleaning" }
+            - { value: solar_cleaning, label: "Solar panel cleaning" }
+            - { value: other, label: "Other" }
+
+      - name: featured
+        label: Feature on homepage
+        type: boolean
+        default: false
+        description: "If on, this project shows on the homepage. The top 2 featured projects appear there."
+
+      - name: order
+        label: Sort order
+        type: number
+        default: 100
+        description: "Lower numbers show first. Use 10 for a brand-new top project, 100 for the rest."
+
+      - name: instagram_url
+        label: Instagram URL (optional)
+        type: string
+        description: "Paste the URL of an Instagram post or reel if you want to embed it. Leave blank if you're using uploaded photos."
+        pattern: "^https://www\\.instagram\\.com/(p|reel|tv)/[^/]+/?$"
+
+      - name: photos
+        label: Photos (up to 6, optional if Instagram URL is set)
+        type: image
+        list:
+          min: 0
+          max: 6
+        options:
+          path: public/recent-work

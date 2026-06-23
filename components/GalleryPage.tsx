@@ -1,16 +1,18 @@
 import PageHeader from "@/components/PageHeader";
 import CtaBand from "@/components/CtaBand";
-import InstagramEmbed from "@/components/InstagramEmbed";
 import InstagramScript from "@/components/InstagramScript";
+import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
 import { business } from "@/lib/business";
-import { recentWork } from "@/lib/recentWork";
+import { getRecentWork, projectCaption } from "@/lib/recentWork";
 import { getDict, type Lang } from "@/lib/i18n";
 
 export default function GalleryPage({ lang }: { lang: Lang }) {
   const dict = getDict(lang);
   const t = dict.galleryPage;
   const r = dict.recentWork;
+  const projects = getRecentWork();
+  const anyEmbed = projects.some((p) => p.photos.length === 0 && !!p.instagramUrl);
   return (
     <>
       <PageHeader title={t.title} subtitle={t.subtitle} />
@@ -22,18 +24,16 @@ export default function GalleryPage({ lang }: { lang: Lang }) {
           </Reveal>
 
           <div className="mx-auto flex max-w-[1100px] flex-wrap justify-center gap-6">
-            {recentWork.map((item, i) => (
+            {projects.map((project, i) => (
               <Reveal
-                key={item.url}
+                key={project.slug}
                 delay={i * 80}
                 className="m-0 w-full max-w-[540px] sm:w-[calc(50%-12px)]"
               >
-                <figure className="m-0">
-                  <InstagramEmbed url={item.url} />
-                  <figcaption className="mt-2 text-center text-sm font-semibold text-neutral-700">
-                    {r.captions[i]}
-                  </figcaption>
-                </figure>
+                <ProjectCard
+                  project={project}
+                  caption={projectCaption(project, lang)}
+                />
               </Reveal>
             ))}
           </div>
@@ -49,7 +49,7 @@ export default function GalleryPage({ lang }: { lang: Lang }) {
             </a>
           </div>
         </div>
-        <InstagramScript />
+        {anyEmbed && <InstagramScript />}
       </section>
 
       <CtaBand lang={lang} title={r.galleryCtaTitle} body={r.galleryCtaBody} />
