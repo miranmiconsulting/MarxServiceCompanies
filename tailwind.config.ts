@@ -69,8 +69,24 @@ const config: Config = {
         container: "1140px",
       },
       boxShadow: {
+        // 4-level elevation scale — pair with translate-y on hover
+        // for "lift" interactions. Keep soft + ring for backward compat.
+        xs: "0 1px 2px rgba(0,0,0,0.05)",
         soft: "0 6px 18px rgba(0,0,0,.08)",
+        elevated: "0 12px 32px rgba(0,0,0,.12)",
+        deep: "0 20px 48px rgba(0,0,0,.16)",
+        // Brand-tinted glows — reserved for hero/CTA focal moments
+        glow: "0 0 20px rgba(43,149,214,0.25)",
+        "glow-accent": "0 0 16px rgba(249,115,22,0.35)",
         ring: "0 0 0 4px rgba(43,149,214,.18)",
+      },
+      backgroundImage: {
+        "gradient-premium":
+          "linear-gradient(135deg, rgba(27,45,92,1) 0%, rgba(25,40,83,1) 50%, rgba(17,32,74,1) 100%)",
+        "gradient-cert-light":
+          "linear-gradient(135deg, rgba(46,160,67,0.10) 0%, rgba(46,160,67,0) 100%)",
+        "dot-grid":
+          "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
       },
       borderRadius: {
         card: "12px",

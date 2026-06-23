@@ -23,31 +23,39 @@ export default function CtaBand({
   const prefix = pathPrefix(lang);
 
   const inner = (
-    <div className="rounded-card bg-gradient-to-br from-navy to-navy-dark p-8 text-center text-white shadow-soft">
-      <h2 className="font-display text-white">{title ?? t.title}</h2>
-      <p className="mt-2 text-white/90">{body ?? t.body}</p>
-      <div className="mt-5 flex flex-wrap justify-center gap-3">
-        <a href={`tel:${business.phoneE164}`} className="btn btn-primary">
-          <Phone size={18} strokeWidth={2.5} aria-hidden="true" />
-          <span>{stripIconEmoji(t.callBtn)}</span>
-        </a>
-        <a
-          href={`sms:${business.phoneE164}`}
-          className="btn bg-white text-navy hover:bg-neutral-100 hover:no-underline"
-        >
-          <MessageSquare size={18} strokeWidth={2.5} aria-hidden="true" />
-          <span>{stripIconEmoji(t.textBtn)}</span>
-        </a>
-        <Link href={`${prefix}/contact#estimate`} className="btn btn-outline-light">
-          {t.requestBtn}
-        </Link>
+    <div className="relative overflow-hidden rounded-card bg-gradient-to-br from-navy via-[#1A2A55] to-navy-dark p-8 text-center text-white shadow-elevated">
+      {/* Dot grid overlay adds texture so the gradient surface doesn't read
+          as a flat color block. Pure CSS, decorative. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-dot-grid [background-size:20px_20px] opacity-50"
+      />
+      <div className="relative">
+        <h2 className="font-display text-white">{title ?? t.title}</h2>
+        <p className="mt-2 text-white/90">{body ?? t.body}</p>
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
+          <a href={`tel:${business.phoneE164}`} className="btn btn-primary">
+            <Phone size={18} strokeWidth={2.5} aria-hidden="true" />
+            <span>{stripIconEmoji(t.callBtn)}</span>
+          </a>
+          <a
+            href={`sms:${business.phoneE164}`}
+            className="btn bg-white text-navy hover:bg-neutral-100 hover:no-underline"
+          >
+            <MessageSquare size={18} strokeWidth={2.5} aria-hidden="true" />
+            <span>{stripIconEmoji(t.textBtn)}</span>
+          </a>
+          <Link href={`${prefix}/contact#estimate`} className="btn btn-outline-light">
+            {t.requestBtn}
+          </Link>
+        </div>
+        {/* Kicker reinforces the certified-installer differentiator with the
+            cert (green) icon. Contrast bumped from white/70 -> white/90. */}
+        <p className="mt-5 inline-flex items-center justify-center gap-2 text-xs uppercase tracking-wider text-white/90">
+          <ShieldCheck size={14} strokeWidth={2.5} className="text-cert" aria-hidden="true" />
+          <span>{t.kicker}</span>
+        </p>
       </div>
-      {/* Kicker reinforces the certified-installer differentiator with the
-          cert (green) icon. Contrast bumped from white/70 -> white/90. */}
-      <p className="mt-5 inline-flex items-center justify-center gap-2 text-xs uppercase tracking-wider text-white/90">
-        <ShieldCheck size={14} strokeWidth={2.5} className="text-cert" aria-hidden="true" />
-        <span>{t.kicker}</span>
-      </p>
     </div>
   );
 

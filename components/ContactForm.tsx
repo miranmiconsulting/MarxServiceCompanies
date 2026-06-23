@@ -34,7 +34,7 @@ export default function ContactForm({ lang = "en" }: Props) {
           type="text"
           required
           autoComplete="name"
-          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
+          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/25 focus:bg-white focus:shadow-[inset_0_1px_2px_rgba(43,149,214,0.1)]"
         />
       </div>
 
@@ -49,7 +49,7 @@ export default function ContactForm({ lang = "en" }: Props) {
           required
           autoComplete="tel"
           placeholder={t.phonePlaceholder}
-          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
+          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/25 focus:bg-white focus:shadow-[inset_0_1px_2px_rgba(43,149,214,0.1)]"
         />
       </div>
 
@@ -62,7 +62,7 @@ export default function ContactForm({ lang = "en" }: Props) {
           name="service"
           required
           defaultValue=""
-          className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
+          className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-3 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/25 focus:bg-white focus:shadow-[inset_0_1px_2px_rgba(43,149,214,0.1)]"
         >
           <option value="" disabled>{t.servicePlaceholder}</option>
           {t.services.map((s) => (
@@ -81,7 +81,7 @@ export default function ContactForm({ lang = "en" }: Props) {
           type="text"
           autoComplete="street-address"
           placeholder={t.addressPlaceholder}
-          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
+          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/25 focus:bg-white focus:shadow-[inset_0_1px_2px_rgba(43,149,214,0.1)]"
         />
       </div>
 
@@ -94,7 +94,7 @@ export default function ContactForm({ lang = "en" }: Props) {
           name="message"
           rows={4}
           placeholder={t.messagePlaceholder}
-          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-navy focus:outline-none focus:ring-4 focus:ring-navy/15"
+          className="w-full rounded-lg border border-neutral-300 px-3 py-3 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/25 focus:bg-white focus:shadow-[inset_0_1px_2px_rgba(43,149,214,0.1)]"
         />
       </div>
 

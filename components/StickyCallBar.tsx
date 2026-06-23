@@ -17,7 +17,7 @@ export default function StickyCallBar({ lang = "en" }: Props) {
     <div
       aria-label={ariaGroup}
       role="navigation"
-      className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-neutral-100 shadow-[0_-8px_24px_rgba(0,0,0,.08)] pb-[env(safe-area-inset-bottom)] md:hidden"
+      className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-neutral-100 bg-white shadow-[0_-12px_32px_rgba(0,0,0,.12)] pb-[env(safe-area-inset-bottom)] md:hidden animate-[sticky-bar-slide-up_0.6s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
     >
       <a
         href={`tel:${business.phoneE164}`}

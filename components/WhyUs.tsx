@@ -16,7 +16,7 @@ export default function WhyUs({ lang = "en" }: Props) {
         <div className="grid gap-3 sm:grid-cols-2">
           {t.items.map((r, i) => (
             <Reveal key={r.title} delay={i * 60}>
-              <div className="flex h-full gap-3 rounded-card border border-neutral-100 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-soft">
+              <div className="flex h-full gap-3 rounded-card border border-neutral-100 border-t-2 border-t-cert/40 bg-white p-4 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-t-cert hover:shadow-soft">
                 {/* Confirmation checkmark — uses CERT (green) since it's a
                     trust/confirmation signal, not an action CTA. */}
                 <span className="grid h-8 w-8 flex-none place-items-center rounded-full bg-cert text-white">

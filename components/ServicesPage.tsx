@@ -15,7 +15,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
           <div className="grid gap-4 sm:grid-cols-2">
             {dict.services.items.map((s, i) => (
               <Reveal key={s.slug} delay={i * 50}>
-                <article id={s.slug} className="card-base h-full transition hover:-translate-y-1">
+                <article id={s.slug} className="card-base h-full">
                   <div className="icon-chip">
                     <ServiceIcon slug={s.slug} size={22} />
                   </div>

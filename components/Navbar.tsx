@@ -48,7 +48,7 @@ export default function Navbar({ lang = "en" }: Props) {
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-neutral-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
+      <header className="sticky top-0 z-50 border-b border-neutral-100 bg-white/95 backdrop-blur shadow-[0_1px_3px_rgba(0,0,0,0.05)] supports-[backdrop-filter]:bg-white/85 animate-[navbar-slide-down_0.5s_ease-out_0.2s_both]">
         <nav
           aria-label={t.nav.aria}
           className="container-page flex items-center justify-between gap-3 py-2 md:py-3"

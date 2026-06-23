@@ -42,7 +42,7 @@ export default function Footer({ lang = "en" }: Props) {
               target="_blank"
               rel="noopener"
               aria-label="Facebook"
-              className="grid h-10 w-10 place-items-center rounded-full border border-neutral-700 bg-neutral-800 font-display text-base font-extrabold text-white transition hover:bg-neutral-700"
+              className="grid h-10 w-10 place-items-center rounded-full border border-neutral-700 bg-neutral-800 font-display text-base font-extrabold text-white transition hover:border-brand hover:bg-neutral-700 hover:shadow-[0_0_8px_rgba(43,149,214,0.35)]"
             >
               <span aria-hidden="true">f</span>
             </a>
@@ -51,7 +51,7 @@ export default function Footer({ lang = "en" }: Props) {
               target="_blank"
               rel="noopener"
               aria-label="Instagram"
-              className="grid h-10 w-10 place-items-center rounded-full border border-neutral-700 bg-neutral-800 font-display text-sm font-extrabold tracking-tight text-white transition hover:bg-neutral-700"
+              className="grid h-10 w-10 place-items-center rounded-full border border-neutral-700 bg-neutral-800 font-display text-sm font-extrabold tracking-tight text-white transition hover:border-brand hover:bg-neutral-700 hover:shadow-[0_0_8px_rgba(43,149,214,0.35)]"
             >
               <span aria-hidden="true">IG</span>
             </a>
