@@ -10,7 +10,7 @@ export const business = {
   foundedYear: 2015,
   phone: "(210) 419-1528",
   phoneE164: "+12104191528",
-  email: "info@alamoareagutters.com",
+  email: "info@marxservicecompanies.com",
   addressLocality: "San Antonio",
   addressRegion: "TX",
   addressCountry: "US",

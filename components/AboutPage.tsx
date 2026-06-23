@@ -31,10 +31,10 @@ export default function AboutPage({ lang }: { lang: Lang }) {
             <h2 className="mt-10">{t.certH2}</h2>
             <div className="mt-4 flex flex-wrap gap-5">
               <Image
-                src="/certified.svg"
+                src="/certified.png"
                 alt={t.certBadgeAlt}
-                width={120}
-                height={120}
+                width={360}
+                height={360}
                 className="h-[120px] w-[120px] flex-none cert-float"
               />
               <p className="min-w-[240px] flex-1 text-neutral-700">{t.certP}</p>

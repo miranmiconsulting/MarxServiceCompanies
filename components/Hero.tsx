@@ -67,10 +67,10 @@ export default function Hero({ lang = "en" }: Props) {
           <div className="h-1 bg-cert" aria-hidden="true" />
           <div className="p-5">
             <Image
-              src="/certified.svg"
+              src="/certified.png"
               alt={t.certCardBadgeAlt}
-              width={170}
-              height={170}
+              width={360}
+              height={360}
               className="mx-auto h-[150px] w-[150px] sm:h-[170px] sm:w-[170px]"
             />
             <strong className="mt-3 block font-display text-base font-extrabold leading-tight text-white sm:text-lg">
