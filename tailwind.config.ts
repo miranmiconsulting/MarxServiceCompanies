@@ -38,10 +38,11 @@ const config: Config = {
           light: "#E8F6EC",
         },
         // CTA orange — primary call-to-action color for "act now" buttons
-        // (Call, Free Estimate). Recommended by the Trust & Authority pattern.
+        // (Call, Free Estimate). DEFAULT is #C2570B (was hover) so
+        // white-on-accent passes WCAG AA (4.68:1 vs. 2.94:1 for #F97316).
         accent: {
-          DEFAULT: "#F97316",
-          dark: "#C2570B",
+          DEFAULT: "#C2570B",
+          dark: "#8F4108",
           light: "#FFEDD5",
         },
       },

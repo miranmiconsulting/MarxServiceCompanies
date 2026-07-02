@@ -1,22 +1,21 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import StormStrip from "@/components/StormStrip";
 import TrustBar from "@/components/TrustBar";
 import ServicesGrid from "@/components/ServicesGrid";
 import WhyUs from "@/components/WhyUs";
+import Testimonials from "@/components/Testimonials";
 import CtaBand from "@/components/CtaBand";
 import AreasServed from "@/components/AreasServed";
 import InstagramScript from "@/components/InstagramScript";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
-// <Testimonials /> intentionally left unmounted for now — turn it back
-// on by importing from @/components/Testimonials and re-adding the JSX
-// once real reviews + Google rating are ready in business.trust.
 import { getFeaturedWork, projectCaption } from "@/lib/recentWork";
 import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
 
 // Page composition follows the Trust & Authority pattern recommended by
-// the design system: Hero → Trust signals → Services → Why us →
-// Testimonials (social proof) → Recent work → CTA → Service area.
+// the design system: Hero → Storm strip → Trust signals → Services →
+// Why us → Testimonials → Recent work → CTA → Service area.
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = getDict(lang).recentWork;
   const prefix = pathPrefix(lang);
@@ -25,9 +24,11 @@ export default function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       <Hero lang={lang} />
+      <StormStrip lang={lang} />
       <TrustBar lang={lang} />
       <ServicesGrid lang={lang} compact />
       <WhyUs lang={lang} />
+      <Testimonials lang={lang} />
 
       <section className="py-14">
         <div className="container-page">

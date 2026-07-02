@@ -274,6 +274,7 @@ export const es: Dict = {
         "Gutter Helmet® / Protección de Canales",
         "Reparación de Canales",
         "Limpieza de Canales",
+        "Inspección por Daño de Tormenta",
         "Limpieza de Ventanas",
         "Limpieza de Paneles Solares",
         "Múltiple / No estoy seguro",
@@ -308,6 +309,14 @@ export const es: Dict = {
     body: `Esa página no existe, pero seguimos aquí. Llame o envíe un mensaje al ${phone} para un estimado gratis.`,
     back: "Volver al Inicio",
     callBtn: `📞 Llame al ${phone}`,
+  },
+
+  stormStrip: {
+    headline: "¿Daño por tormenta?",
+    body: "Inspecciones el mismo día en el área de San Antonio.",
+    cta: "Llame ahora",
+    callAria: `Llame al ${phone} para una inspección de daños de tormenta el mismo día`,
+    aria: "Aviso de inspección por daño de tormenta",
   },
 
   pageMeta: {

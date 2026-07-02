@@ -53,8 +53,8 @@
   .btn:active { @apply translate-y-0 shadow-none scale-[0.98]; }
 
   .btn-primary { @apply bg-accent text-white hover:bg-accent-dark hover:no-underline; }
-  /* Orange glow reinforces the "this is THE action" hierarchy. */
-  .btn-primary:hover { box-shadow: 0 8px 20px rgba(249,115,22,0.35); }
+  /* Warm glow tuned to the new accent (#C2570B). */
+  .btn-primary:hover { box-shadow: 0 8px 20px rgba(194,87,11,0.30); }
 
   .btn-secondary { @apply bg-navy text-white hover:bg-navy-dark hover:no-underline; }
   .btn-outline {
@@ -62,10 +62,6 @@
   }
   .btn-outline-light {
     @apply border-2 border-white text-white hover:bg-white hover:text-navy hover:no-underline;
-  }
-
-  .badge-pill {
-    @apply rounded-full border border-white/25 bg-white/10 px-3 py-1 text-sm backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/15;
   }
 
   /* Card foundation — top hairline gradient accent (brand by default) +
@@ -76,10 +72,6 @@
   .card-base:hover {
     @apply -translate-y-0.5 shadow-elevated;
     border-top-color: rgb(43 149 214);
-  }
-
-  .icon-chip {
-    @apply mb-3 grid h-11 w-11 place-items-center rounded-lg bg-brand-light text-navy;
   }
 
   .checks li {
@@ -108,68 +100,6 @@
 }
 .card-base:focus-within {
   @apply ring-2 ring-brand/40 ring-offset-2 shadow-soft;
-}
-
-/* =========================================================
-   Hero rain / gutter scene
-   - Pure CSS animations, GPU-friendly (transform + opacity).
-   - Raindrops are absolutely positioned <span> elements.
-   - SVG shimmer + water-pulse classes drive the gutter visual.
-   - Reduced-motion baseline at top of file disables motion.
-   ========================================================= */
-.raindrop {
-  position: absolute;
-  top: -16px;
-  width: 1.5px;
-  height: 14px;
-  border-radius: 1px;
-  background: linear-gradient(
-    to bottom,
-    rgba(180, 220, 255, 0) 0%,
-    rgba(180, 220, 255, 0.85) 100%
-  );
-  animation-name: rain-fall;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  will-change: transform;
-}
-
-@media (max-width: 640px) {
-  .raindrop { width: 1.5px; height: 14px; }
-}
-
-@keyframes rain-fall {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(0, 100vh, 0); }
-}
-
-/* Gutter water shimmer — the bright band slides left → right inside the gutter */
-.gutter-shine-wrap {
-  animation: gutter-shine 3.6s ease-in-out infinite;
-  transform-origin: left center;
-}
-@keyframes gutter-shine {
-  0%, 100% { transform: translateX(0);    opacity: 0; }
-  10%      { opacity: 0.85; }
-  90%      { opacity: 0.85; }
-  100%     { transform: translateX(1600px); opacity: 0; }
-}
-
-/* Water "drip" pulses out of the downspout */
-.water-pulse-wrap {
-  animation: water-pulse 1.4s linear infinite;
-  transform-origin: top;
-}
-@keyframes water-pulse {
-  0%   { transform: translate3d(0, -60px, 0); opacity: 0; }
-  20%  { opacity: 0.95; }
-  80%  { opacity: 0.7; }
-  100% { transform: translate3d(0, 30px, 0);  opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .raindrop { display: none; }
-  .water-pulse-wrap { display: none; }
 }
 
 /* =========================================================

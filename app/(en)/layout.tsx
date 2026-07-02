@@ -102,6 +102,17 @@ const localBusinessJsonLd = {
   founder: { "@type": "Person", name: business.owner },
   foundingDate: String(business.foundedYear),
   sameAs: [business.social.facebook, business.social.instagram].filter(Boolean),
+  ...(business.trust.googleRating
+    ? {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: business.trust.googleRating,
+          reviewCount: business.trust.googleReviewCount,
+          bestRating: "5",
+          worstRating: "1",
+        },
+      }
+    : {}),
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

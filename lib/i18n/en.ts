@@ -246,6 +246,7 @@ export const en: Dict = {
         "Gutter Helmet® / Gutter Guards",
         "Gutter Repair",
         "Gutter Cleaning",
+        "Storm Damage Inspection",
         "Window Cleaning",
         "Solar Panel Cleaning",
         "Multiple / Not sure",
@@ -280,6 +281,14 @@ export const en: Dict = {
     body: `That page doesn't exist, but we're still here. Call or text ${phone} for a free estimate.`,
     back: "Back to Home",
     callBtn: `📞 Call ${phone}`,
+  },
+
+  stormStrip: {
+    headline: "Storm damage?",
+    body: "Same-day inspections available across the San Antonio area.",
+    cta: "Call now",
+    callAria: `Call ${phone} for a same-day storm inspection`,
+    aria: "Storm damage inspection notice",
   },
 
   pageMeta: {

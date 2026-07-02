@@ -48,11 +48,14 @@ export const business = {
   // Reviews are intentionally OFF for now — set googleRating to a value
   // like "5.0" + a real count + (optional) URL to enable the ReviewsBadge.
   trust: {
-    googleRating: "",          // "" hides the ReviewsBadge everywhere
-    googleReviewCount: 0,      // hides the "· N reviews" suffix
-    googleReviewsUrl: "",      // optional outbound link wrapping the badge
-    insured: true,             // "Fully Insured" pill in TrustBar
-    bbb: false,                // "BBB Accredited" pill if true
+    // Rating + count match the 3 seeded quotes in lib/testimonials.ts.
+    // When the Google Business Profile goes live, Marcos updates these
+    // to the real live values and sets googleReviewsUrl to the profile.
+    googleRating: "5.0",
+    googleReviewCount: 3,
+    googleReviewsUrl: "",
+    insured: true,
+    bbb: false,
   },
 } as const;
 

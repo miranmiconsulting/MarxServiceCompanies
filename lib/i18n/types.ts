@@ -157,6 +157,14 @@ export type Dict = {
 
   notFound: { title: string; body: string; back: string; callBtn: string };
 
+  stormStrip: {
+    headline: string;
+    body: string;
+    cta: string;
+    callAria: string;
+    aria: string;
+  };
+
   pageMeta: {
     home: { title: string; description: string };
     services: { title: string; description: string };
