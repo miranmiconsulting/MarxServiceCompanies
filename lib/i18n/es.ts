@@ -312,7 +312,7 @@ export const es: Dict = {
 
   pageMeta: {
     home: {
-      title: "Instalación y Limpieza de Canales en San Antonio TX | Alamo Area Gutters by Marx",
+      title: "Instalación y Limpieza de Canales en San Antonio TX",
       description: `Instalación, protección, reparación, y limpieza de canales de confianza en San Antonio desde ${business.foundedYear}. Estimados gratis de Alamo Area Gutters by Marx Service Companies. Llame al ${phone}.`,
     },
     services: {

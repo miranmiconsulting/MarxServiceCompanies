@@ -59,12 +59,11 @@ export default function Navbar({ lang = "en" }: Props) {
             aria-label={`${business.brandName} ${business.brandSubtitle}, ${t.nav.home}`}
           >
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Marx Service Companies. Servicing Your Projects."
               width={319}
               height={186}
               priority
-              unoptimized
               className="block h-14 w-auto sm:h-16 md:h-20"
             />
             <span className="hidden border-l border-neutral-200 pl-3 font-display text-base font-extrabold leading-tight text-navy md:block md:text-lg">

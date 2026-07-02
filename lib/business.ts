@@ -18,7 +18,9 @@ export const business = {
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.alamoareagutterhelmet.com",
   social: {
-    facebook: "https://www.facebook.com/",
+    // Placeholder removed — leave empty until Marcos provides the real
+    // Facebook page URL. JSON-LD sameAs filters out empty entries.
+    facebook: "",
     instagram: "https://www.instagram.com/marxservicecompanies/",
   },
   hours: {

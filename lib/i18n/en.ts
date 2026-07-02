@@ -284,7 +284,7 @@ export const en: Dict = {
 
   pageMeta: {
     home: {
-      title: "Gutter Installation & Cleaning in San Antonio TX | Alamo Area Gutters by Marx",
+      title: "Gutter Installation & Cleaning in San Antonio TX",
       description: `Trusted San Antonio gutter installation, gutter guards, repairs and cleaning since ${business.foundedYear}. Free estimates from Alamo Area Gutters by Marx Service Companies. Call ${phone}.`,
     },
     services: {

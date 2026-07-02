@@ -1,7 +1,13 @@
 "use client";
 
-// Lightweight scroll-reveal wrapper. Adds a fade-up when the element scrolls
-// into view. Disables itself entirely if the user prefers reduced motion.
+// Progressive-enhancement scroll reveal. SSR renders content VISIBLE so
+// a failed hydration or disabled JS still shows the page. On client
+// mount we opt into the hidden→visible fade when JS is available and
+// the user hasn't requested reduced motion.
+//
+// Prior behavior (SSR opacity-0 waiting for IntersectionObserver) meant
+// every below-the-fold section was invisible until React hydrated. If
+// hydration ever failed, the page appeared blank.
 //
 // Usage: <Reveal><h2>...</h2></Reveal> or <Reveal delay={120}>...</Reveal>
 
@@ -9,11 +15,17 @@ import { useEffect, useRef, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
-  delay?: number;       // ms
+  delay?: number;
   className?: string;
   as?: "div" | "section" | "article" | "header" | "aside";
-  once?: boolean;       // default true — only animate on first entry
+  once?: boolean;
 };
+
+// 'default' = visible without transition — what SSR renders, what no-JS
+// sees, and what the fallback shows on browsers without IntersectionObserver.
+// 'hidden'  = opted into animation, waiting for the observer to fire.
+// 'visible' = animate to visible.
+type State = "default" | "hidden" | "visible";
 
 export default function Reveal({
   children,
@@ -23,33 +35,37 @@ export default function Reveal({
   once = true,
 }: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
-  const [reduced, setReduced] = useState(false);
+  const [state, setState] = useState<State>("default");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener?.("change", handler);
-    return () => mq.removeEventListener?.("change", handler);
-  }, []);
 
-  useEffect(() => {
-    if (reduced) {
-      setVisible(true);
+    // Reduced motion: skip the animation entirely, jump straight to visible.
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) {
+      setState("visible");
       return;
     }
+
+    // No IntersectionObserver: keep the default (visible) state.
+    if (typeof IntersectionObserver === "undefined") return;
+
     const node = ref.current;
     if (!node) return;
+
+    // Opt into the animation now that JS is running. If this render never
+    // paints (e.g. the observer fires the same frame for above-the-fold
+    // items), the user sees a smooth fade-in instead of a flash.
+    setState("hidden");
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            setVisible(true);
+            setState("visible");
             if (once) obs.disconnect();
           } else if (!once) {
-            setVisible(false);
+            setState("hidden");
           }
         });
       },
@@ -57,15 +73,24 @@ export default function Reveal({
     );
     obs.observe(node);
     return () => obs.disconnect();
-  }, [reduced, once]);
+  }, [once]);
+
+  // Transition applies ONLY on the way TO visible so the default→hidden
+  // step is instantaneous (no jarring reverse animation on hydration).
+  const transitionClass =
+    state === "visible"
+      ? "transition-all duration-700 ease-out motion-reduce:transition-none"
+      : "";
+  const stateClass =
+    state === "hidden"
+      ? "opacity-0 translate-y-4"
+      : "opacity-100 translate-y-0";
 
   return (
     <Tag
       ref={ref as never}
-      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      } ${className}`}
-      style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}
+      className={`${transitionClass} ${stateClass} ${className}`.trim()}
+      style={{ transitionDelay: state === "visible" ? `${delay}ms` : "0ms" }}
     >
       {children}
     </Tag>
