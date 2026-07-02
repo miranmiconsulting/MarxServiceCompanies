@@ -13,6 +13,9 @@ import { business } from "../business";
 //     like how a contractor would actually talk.
 //   - Should be reviewed by a native bilingual speaker before final
 //     marketing use.
+//   - Warranty language ("garantía transferible", "garantía vitalicia")
+//     belongs to Gutter Helmet's manufacturer, not Marx. Reinstate only
+//     with owner-confirmed wording and manufacturer attribution.
 
 const phone = business.phone;
 
@@ -29,8 +32,6 @@ export const es: Dict = {
   },
 
   utility: {
-    // Top-bar message anchored across all viewports — leads with the
-    // differentiator that nobody else in the area can claim.
     mobileMessage: "Único Instalador Certificado de Gutter Helmet® en el Área",
     tagline: "Único Instalador Certificado de Gutter Helmet® en el Área",
     established: `Desde ${business.foundedYear}`,
@@ -50,7 +51,7 @@ export const es: Dict = {
   hero: {
     eyebrow: "Único Instalador Certificado en el Área",
     h1: "Expertos en Canales en San Antonio: Instalación, Protección, Reparación y Limpieza",
-    sub: `Canales sin uniones de 5" y 6", protección Gutter Helmet®, y limpieza exterior bien hecha desde la primera vez. Empresa familiar local de confianza en San Antonio y áreas cercanas desde ${business.foundedYear}.`,
+    sub: `Canales sin uniones de 5" y 6", protección Gutter Helmet®, reparaciones y limpieza bien hechas desde la primera vez. Empresa familiar local de confianza en San Antonio y áreas cercanas desde ${business.foundedYear}.`,
     callBtn: `📞 Llame al ${phone}`,
     textBtn: "💬 Envíenos un mensaje",
     estimateBtn: "Pida un Estimado Gratis",
@@ -99,9 +100,8 @@ export const es: Dict = {
         short:
           "El sistema original patentado de protección de canales. Instalador autorizado.",
         long:
-          "Gutter Helmet® mantiene fuera las hojas, ramas y residuos mientras deja entrar el agua, y viene con garantía transferible de funcionamiento. Deje de subir escaleras. Deje de pagar por limpiezas.",
+          "Gutter Helmet® mantiene fuera las hojas, ramas y residuos mientras deja entrar el agua. Deje de subir escaleras. Deje de pagar por limpiezas.",
         bullets: [
-          "Garantía vitalicia de funcionamiento sin obstrucciones",
           "Se instala sobre sus canales existentes",
           "Maneja hasta los residuos pesados de roble",
         ],
@@ -138,30 +138,12 @@ export const es: Dict = {
         long:
           "Limpieza completa a mano de canales y bajantes para que el agua de tormenta de verdad drene lejos de su cimiento. Embolsamos los residuos y dejamos su propiedad limpia. Lo mejor es hacerlo dos veces al año en San Antonio. Una vez después del otoño, y otra después del polen de roble en primavera.",
       },
-      {
-        slug: "windows",
-        icon: "🪟",
-        title: "Limpieza de Ventanas",
-        short:
-          "Limpieza interior y exterior de ventanas, sin rayas, para hogares residenciales.",
-        long:
-          "Limpieza interior y exterior de ventanas sin rayas para hogares residenciales. A menudo se reserva junto con la limpieza de canales a un precio combinado.",
-      },
-      {
-        slug: "solar",
-        icon: "☀️",
-        title: "Limpieza de Paneles Solares",
-        short:
-          "Recupere su producción solar quitando polvo, polen, y suciedad de aves de manera segura.",
-        long:
-          "El polen, polvo y suciedad de aves pueden bajar entre 15 y 25% su producción solar. Usamos métodos de limpieza seguros y aprobados para paneles, para recuperar su producción sin afectar la garantía.",
-      },
     ],
   },
 
   whatWeDo: {
     title: "Lo Que Hacemos",
-    sub: "Desde la instalación de canales sin uniones hasta la protección Gutter Helmet® libre de obstrucciones y la limpieza exterior, hacemos el trabajo que mantiene su hogar protegido de las tormentas de Texas.",
+    sub: "Instalación de canales sin uniones, protección Gutter Helmet® libre de obstrucciones, mallas y cubiertas, reparaciones, y limpieza. Hacemos el trabajo que mantiene su hogar protegido de las tormentas de Texas.",
     seeAll: "Ver Todos los Servicios →",
   },
 
@@ -172,7 +154,7 @@ export const es: Dict = {
       { title: `Desde ${business.foundedYear}`, body: "Más de una década sirviendo a familias en San Antonio. La mayoría de nuestro trabajo viene por recomendaciones." },
       { title: "El Dueño en Cada Trabajo", body: `${business.owner} está en sitio, no solo en la calcomanía del camión. Usted habla con el dueño.` },
       { title: "Estimados Gratis y Sin Presión", body: "Medimos, recomendamos, y le damos un precio. Sin presión de venta. Sin sorpresas." },
-      { title: "Instalador Autorizado de Gutter Helmet®", body: "Respaldados por el sistema original de protección de canales con garantía transferible de funcionamiento." },
+      { title: "Instalador Autorizado de Gutter Helmet®", body: "El único instalador certificado del área para el sistema original patentado de protección de canales." },
       { title: "Lugares de Trabajo Limpios", body: "Cuidamos su jardín y recogemos cada clavo, tornillo, y pedazo antes de irnos." },
       { title: "Locales y Atentos", body: "Llamadas y mensajes contestados el mismo día. Aquí también vivimos." },
     ],
@@ -209,10 +191,10 @@ export const es: Dict = {
 
   servicesPage: {
     title: "Nuestros Servicios",
-    subtitle: "Canales, protección de canales, y limpieza exterior en todo San Antonio y áreas cercanas.",
+    subtitle: "Instalación de canales, protección de canales, reparación, y limpieza en todo San Antonio y áreas cercanas.",
     certEyebrow: "Certificación de Gutter Helmet®",
     certTitle: "La Instalación Certificada Importa",
-    certBody: "Cuando se trata de sistemas Gutter Helmet®, una instalación correcta hace toda la diferencia. Marx Service Companies es el único instalador certificado en el área, lo que garantiza que el sistema se instala según los estándares del fabricante y con respaldo de garantía.",
+    certBody: "Cuando se trata de sistemas Gutter Helmet®, una instalación correcta hace toda la diferencia. Marx Service Companies es el único instalador certificado en el área, así que cada instalación se hace según los estándares del fabricante.",
     ctaTitle: "¿No Está Seguro de Lo Que Necesita? Solo Pregunte.",
     ctaBody: "Pasamos a verlo, le decimos directo, y le damos el precio por escrito. Sin costo.",
   },
@@ -227,13 +209,13 @@ export const es: Dict = {
     sub: "Empresa familiar. Dueños locales. Nosotros mismos en la escalera.",
     foundedH2: `Fundada en ${business.foundedYear} por ${business.owner}`,
     p1: `Marx Service Companies LLC empezó en ${business.foundedYear} con un trabajo a la vez y una sola regla: hacer el trabajo como usted lo querría hecho en su propia casa. Más de una década después, esa sigue siendo la regla.`,
-    p2: 'Empezamos con canales y eso sigue siendo el corazón de lo que hacemos. Instalaciones sin uniones de 5" y 6", protección Gutter Helmet®, reparaciones, y limpiezas. Con el tiempo, los clientes pidieron más, así que agregamos limpieza de ventanas y limpieza de paneles solares para completar el trabajo exterior que mantiene un hogar funcionando.',
+    p2: 'Los canales son lo que hacemos, de principio a fin. Instalaciones sin uniones de 5" y 6", protección Gutter Helmet®, mallas y cubiertas, reparaciones, y limpiezas. Un solo oficio, un solo equipo, un solo enfoque.',
     meaningH2: '¿Qué Significa "A Su Servicio" Para Nosotros?',
     meaningP: "Significa que el dueño contesta el teléfono. Significa que llegamos cuando decimos que vamos a llegar. Significa que medimos dos veces, damos un precio una vez, y no le cambiamos el número a la mitad del trabajo. Significa limpiar antes de irnos para que no pueda saber dónde trabajamos, excepto que sus canales drenan otra vez.",
     whereH2: "Dónde Trabajamos",
     whereP: `Estamos basados en ${business.addressLocality}, ${business.addressRegion} y atendemos hogares por todo el Condado de Bexar y las comunidades cercanas, incluyendo Stone Oak, Alamo Heights, Helotes, Boerne, Bulverde, Schertz, Cibolo, Selma, Universal City, Live Oak, Converse, y New Braunfels.`,
     certH2: "Instalador Certificado de Gutter Helmet®",
-    certP: "Marx Service Companies es el único instalador certificado de Gutter Helmet® en el área, lo que garantiza que el sistema se instala según los estándares del fabricante y con garantía transferible de funcionamiento. Si una malla o cubierta es mejor para su hogar, también se lo decimos.",
+    certP: "Marx Service Companies es el único instalador certificado de Gutter Helmet® en el área. Cada instalación se hace según los estándares del fabricante. Si una malla o cubierta es mejor para su hogar, también se lo decimos.",
     certBadgeAlt: "Insignia de Instalador Certificado de Gutter Helmet",
     ctaTitle: "Hable Directamente con el Dueño",
     ctaBody: `Sin centros de llamadas. Sin vendedores. ${business.owner} contesta, llega, y le da el precio él mismo.`,
@@ -271,12 +253,10 @@ export const es: Dict = {
       consent: "Al enviar acepta ser contactado por teléfono, mensaje, o correo sobre su estimado. No compartimos su información.",
       services: [
         'Instalación de Canales (5" o 6")',
-        "Gutter Helmet® / Protección de Canales",
+        "Gutter Helmet®",
+        "Mallas y Cubiertas para Canales",
         "Reparación de Canales",
         "Limpieza de Canales",
-        "Inspección por Daño de Tormenta",
-        "Limpieza de Ventanas",
-        "Limpieza de Paneles Solares",
         "Múltiple / No estoy seguro",
       ],
     },
@@ -291,10 +271,9 @@ export const es: Dict = {
     serviceLinks: [
       { href: "/es/services#install", label: "Instalación de Canales" },
       { href: "/es/services#helmet", label: "Gutter Helmet®" },
+      { href: "/es/services#screens", label: "Mallas y Cubiertas" },
       { href: "/es/services#repair", label: "Reparación de Canales" },
       { href: "/es/services#cleaning", label: "Limpieza de Canales" },
-      { href: "/es/services#windows", label: "Limpieza de Ventanas" },
-      { href: "/es/services#solar", label: "Limpieza Solar" },
     ],
     companyLinks: [
       { href: "/es/about", label: "Quiénes Somos" },
@@ -311,14 +290,6 @@ export const es: Dict = {
     callBtn: `📞 Llame al ${phone}`,
   },
 
-  stormStrip: {
-    headline: "¿Daño por tormenta?",
-    body: "Inspecciones el mismo día en el área de San Antonio.",
-    cta: "Llame ahora",
-    callAria: `Llame al ${phone} para una inspección de daños de tormenta el mismo día`,
-    aria: "Aviso de inspección por daño de tormenta",
-  },
-
   pageMeta: {
     home: {
       title: "Instalación y Limpieza de Canales en San Antonio TX",
@@ -326,11 +297,11 @@ export const es: Dict = {
     },
     services: {
       title: "Servicios de Canales en San Antonio TX | Instalación, Protección, Reparación, Limpieza",
-      description: `Instalación de canales sin uniones, Gutter Helmet®, reparaciones, limpieza de canales, limpieza de ventanas y limpieza de paneles solares en San Antonio TX. Estimados gratis. Llame al ${phone}.`,
+      description: `Instalación de canales sin uniones, Gutter Helmet®, mallas y cubiertas, reparaciones, y limpieza de canales en San Antonio TX. Estimados gratis. Llame al ${phone}.`,
     },
     about: {
       title: `Sobre ${business.legalName} | Especialista en Canales en San Antonio Desde ${business.foundedYear}`,
-      description: `${business.legalName} es una empresa familiar de canales y servicios exteriores en San Antonio, TX. Fundada por ${business.owner} en ${business.foundedYear}. Estimados gratis. Llame al ${phone}.`,
+      description: `${business.legalName} es una empresa familiar de servicios de canales en San Antonio, TX. Fundada por ${business.owner} en ${business.foundedYear}. Estimados gratis. Llame al ${phone}.`,
     },
     contact: {
       title: "Contacto y Estimado Gratis | Expertos en Canales en San Antonio",

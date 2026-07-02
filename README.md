@@ -24,7 +24,7 @@ Production-ready Next.js 15 (App Router) website for **Marx Service Companies LL
 | Meta description | *Trusted San Antonio gutter installation, gutter guards, repairs and cleaning since 2011. Free estimates from Alamo Area Gutters by Marx Service Companies. Call 210-419-1528.* |
 | Schema | `RoofingContractor` JSON-LD with full `areaServed[]`, `OfferCatalog`, hours, `founder`, `foundingDate` |
 
-**Primary keywords:** seamless gutter installation San Antonio · 5"/6" gutters San Antonio · Gutter Helmet San Antonio · gutter guards San Antonio · gutter cleaning San Antonio · gutter repair near me · window cleaning San Antonio · solar panel cleaning San Antonio.
+**Primary keywords:** seamless gutter installation San Antonio · 5"/6" gutters San Antonio · Gutter Helmet San Antonio · gutter guards San Antonio · gutter cleaning San Antonio · gutter repair near me.
 
 **Local geo-modifiers** (used in copy, schema, and area-served chips): San Antonio, Stone Oak, Alamo Heights, Castle Hills, Leon Valley, Helotes, Boerne, Bulverde, Schertz, Cibolo, Selma, Universal City, Live Oak, Converse, New Braunfels.
 
@@ -34,7 +34,7 @@ Production-ready Next.js 15 (App Router) website for **Marx Service Companies LL
 
 ```
 /                Home — hero, trust bar, services, why-us, recent work, CTA, areas
-/services        Full services page (anchor links: #install, #helmet, #screens, #repair, #cleaning, #windows, #solar)
+/services        Full services page (anchor links: #install, #helmet, #screens, #repair, #cleaning)
 /about           Owner story + Gutter Helmet Certified Installer
 /gallery         Recent work / Instagram-ready video grid
 /contact         Contact info + free-estimate form (#estimate)

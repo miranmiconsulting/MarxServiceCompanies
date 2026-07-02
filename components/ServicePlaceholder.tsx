@@ -67,35 +67,6 @@ function paths(slug: string): React.ReactNode {
           <path d="M310 190 Q320 200 330 190" strokeWidth="4" />
         </g>
       );
-    case "window":
-      return (
-        <g fill="none" stroke={nav} strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="90" y="45" width="220" height="140" rx="4" fill="rgba(255,255,255,0.6)" />
-          <path d="M200 45 L200 185 M90 115 L310 115" />
-          {/* subtle shine */}
-          <path d="M120 60 L120 105" stroke="rgba(43,149,214,0.6)" strokeWidth="3" />
-        </g>
-      );
-    case "solar":
-      return (
-        <g fill="none" stroke={nav} strokeWidth="4" strokeLinejoin="round">
-          {/* 3×2 solar array. */}
-          {Array.from({ length: 3 }).map((_, col) =>
-            Array.from({ length: 2 }).map((_, row) => (
-              <rect
-                key={`${col}-${row}`}
-                x={70 + col * 90}
-                y={55 + row * 60}
-                width="80"
-                height="50"
-                rx="3"
-                fill="rgba(27,45,92,0.10)"
-              />
-            ))
-          )}
-          <path d="M200 175 L200 195" strokeWidth="6" />
-        </g>
-      );
     default:
       return (
         <g fill="none" stroke={nav} strokeWidth="6" strokeLinecap="round">

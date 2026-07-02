@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import StormStrip from "@/components/StormStrip";
 import TrustBar from "@/components/TrustBar";
 import ServicesGrid from "@/components/ServicesGrid";
 import WhyUs from "@/components/WhyUs";
-import Testimonials from "@/components/Testimonials";
 import CtaBand from "@/components/CtaBand";
 import AreasServed from "@/components/AreasServed";
 import InstagramScript from "@/components/InstagramScript";
@@ -13,9 +11,12 @@ import Reveal from "@/components/Reveal";
 import { getFeaturedWork, projectCaption } from "@/lib/recentWork";
 import { getDict, type Lang, pathPrefix } from "@/lib/i18n";
 
-// Page composition follows the Trust & Authority pattern recommended by
-// the design system: Hero → Storm strip → Trust signals → Services →
-// Why us → Testimonials → Recent work → CTA → Service area.
+// Page composition: Hero → Trust signals → Services → Why us →
+// Recent work → CTA → Service area.
+//
+// TODO: real Google reviews section — mount a testimonials block once
+// Marcos has an active Google Business Profile with real reviews. Do
+// NOT mount fabricated review content here. See CLAUDE.md.
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = getDict(lang).recentWork;
   const prefix = pathPrefix(lang);
@@ -24,11 +25,9 @@ export default function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       <Hero lang={lang} />
-      <StormStrip lang={lang} />
       <TrustBar lang={lang} />
       <ServicesGrid lang={lang} compact />
       <WhyUs lang={lang} />
-      <Testimonials lang={lang} />
 
       <section className="py-14">
         <div className="container-page">

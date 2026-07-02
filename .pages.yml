@@ -51,10 +51,9 @@ content:
           values:
             - { value: gutter_install, label: "Gutter installation" }
             - { value: gutter_helmet, label: "Gutter Helmet" }
+            - { value: screens, label: "Screens & covers" }
             - { value: repair, label: "Repair" }
             - { value: cleaning, label: "Gutter cleaning" }
-            - { value: window_cleaning, label: "Window cleaning" }
-            - { value: solar_cleaning, label: "Solar panel cleaning" }
             - { value: other, label: "Other" }
 
       - name: featured

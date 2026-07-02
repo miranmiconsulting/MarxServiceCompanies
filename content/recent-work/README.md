@@ -15,7 +15,7 @@ frontmatter only (no body):
 title: Internal name (not shown on site)
 caption_en: Public caption (English)
 caption_es: Public caption (Spanish — optional, falls back to English)
-service_type: gutter_install | gutter_helmet | repair | cleaning | window_cleaning | solar_cleaning | other
+service_type: gutter_install | gutter_helmet | screens | repair | cleaning | other
 featured: true | false       # if true, eligible for homepage (top 2 by order win)
 order: 10                    # lower number = shows first
 instagram_url: https://... # optional, used as fallback display if no photos

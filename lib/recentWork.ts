@@ -15,10 +15,9 @@ import type { Lang } from "@/lib/i18n";
 export type ServiceType =
   | "gutter_install"
   | "gutter_helmet"
+  | "screens"
   | "repair"
   | "cleaning"
-  | "window_cleaning"
-  | "solar_cleaning"
   | "other";
 
 export type Project = {

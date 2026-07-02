@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     siteName: brandFull,
     title: `${brandFull} | Instaladores de Canales en San Antonio Desde ${business.foundedYear}`,
     description:
-      "Canales sin uniones, Gutter Helmet®, reparaciones, limpieza, ventanas y paneles solares en San Antonio. Estimados gratis.",
+      "Canales sin uniones, Gutter Helmet®, mallas y cubiertas, reparaciones, y limpieza en San Antonio. Estimados gratis.",
   },
   twitter: {
     card: "summary_large_image",
     title: `${brandFull} | Instaladores de Canales en San Antonio Desde ${business.foundedYear}`,
     description:
-      "Canales sin uniones, Gutter Helmet®, reparaciones, limpieza, ventanas y paneles solares en San Antonio. Estimados gratis.",
+      "Canales sin uniones, Gutter Helmet®, mallas y cubiertas, reparaciones, y limpieza en San Antonio. Estimados gratis.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1B2D5C",
+  themeColor: "#EEF6FB",
   width: "device-width",
   initialScale: 1,
 };
@@ -99,17 +99,9 @@ const localBusinessJsonLd = {
   founder: { "@type": "Person", name: business.owner },
   foundingDate: String(business.foundedYear),
   sameAs: [business.social.facebook, business.social.instagram].filter(Boolean),
-  ...(business.trust.googleRating
-    ? {
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: business.trust.googleRating,
-          reviewCount: business.trust.googleReviewCount,
-          bestRating: "5",
-          worstRating: "1",
-        },
-      }
-    : {}),
+  // aggregateRating deliberately omitted. No Google reviews exist yet.
+  // Reinstate ONLY when Marcos confirms real Google Business Profile
+  // review counts/ratings — never seed with fabricated values.
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -120,7 +112,7 @@ const localBusinessJsonLd = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Servicios de canales y exteriores",
+    name: "Servicios de canales",
     itemListElement: es.services.items.map((s) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name: s.title },

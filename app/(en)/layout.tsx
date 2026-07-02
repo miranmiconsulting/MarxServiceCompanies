@@ -42,8 +42,6 @@ export const metadata: Metadata = {
     "gutter guards San Antonio",
     "gutter cleaning San Antonio",
     "gutter repair San Antonio",
-    "window cleaning San Antonio",
-    "solar panel cleaning San Antonio",
     "Alamo Area Gutters",
     "Marx Service Companies",
   ],
@@ -56,13 +54,13 @@ export const metadata: Metadata = {
     siteName: brandFull,
     title: `${brandFull} | San Antonio Gutter Pros Since ${business.foundedYear}`,
     description:
-      "Seamless gutters, Gutter Helmet®, repairs, cleaning, window & solar cleaning across San Antonio. Free estimates.",
+      "Seamless gutters, Gutter Helmet®, screens and covers, repairs, and cleaning across San Antonio. Free estimates.",
   },
   twitter: {
     card: "summary_large_image",
     title: `${brandFull} | San Antonio Gutter Pros Since ${business.foundedYear}`,
     description:
-      "Seamless gutters, Gutter Helmet®, repairs, cleaning, window & solar cleaning across San Antonio. Free estimates.",
+      "Seamless gutters, Gutter Helmet®, screens and covers, repairs, and cleaning across San Antonio. Free estimates.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -73,7 +71,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1B2D5C",
+  themeColor: "#EEF6FB",
   width: "device-width",
   initialScale: 1,
 };
@@ -102,17 +100,9 @@ const localBusinessJsonLd = {
   founder: { "@type": "Person", name: business.owner },
   foundingDate: String(business.foundedYear),
   sameAs: [business.social.facebook, business.social.instagram].filter(Boolean),
-  ...(business.trust.googleRating
-    ? {
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: business.trust.googleRating,
-          reviewCount: business.trust.googleReviewCount,
-          bestRating: "5",
-          worstRating: "1",
-        },
-      }
-    : {}),
+  // aggregateRating deliberately omitted. No Google reviews exist yet.
+  // Reinstate ONLY when Marcos confirms real Google Business Profile
+  // review counts/ratings — never seed with fabricated values.
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -123,7 +113,7 @@ const localBusinessJsonLd = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Gutter & Exterior Services",
+    name: "Gutter Services",
     itemListElement: en.services.items.map((s) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name: s.title },

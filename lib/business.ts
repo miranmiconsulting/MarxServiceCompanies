@@ -44,15 +44,16 @@ export const business = {
     "Converse",
     "New Braunfels",
   ],
-  // Trust signals — placeholder values, owner should confirm/correct.
-  // Reviews are intentionally OFF for now — set googleRating to a value
-  // like "5.0" + a real count + (optional) URL to enable the ReviewsBadge.
+  // Trust signals.
+  // Reviews are OFF because Marx does not yet have a Google Business
+  // Profile with live reviews. Do NOT populate googleRating /
+  // googleReviewCount with fabricated values — that's what pulled fake
+  // "5.0 · 3 reviews" onto the site before. When Marcos activates GBP
+  // and has real reviews, set googleRating to the real value, count to
+  // the real number, and googleReviewsUrl to the profile permalink.
   trust: {
-    // Rating + count match the 3 seeded quotes in lib/testimonials.ts.
-    // When the Google Business Profile goes live, Marcos updates these
-    // to the real live values and sets googleReviewsUrl to the profile.
-    googleRating: "5.0",
-    googleReviewCount: 3,
+    googleRating: "",
+    googleReviewCount: 0,
     googleReviewsUrl: "",
     insured: true,
     bbb: false,
